@@ -1,0 +1,24 @@
+# macOS and editor files
+.DS_Store
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Common build outputs
+node_modules/
+dist/
+build/
+
+# Local Codex settings and plugin checkout
+.codex/config.toml
+.agents/plugins/
+plugins/codex-council/
