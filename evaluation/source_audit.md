@@ -310,3 +310,166 @@ Only the six approved paths were written. Existing plan/context bytes were backe
 A runnable retrieval/model evaluation harness is the next implementation slice; no green dataset-integrity check should be presented as model accuracy.
 
 Final root rerun after review corrections: PASS — 30 cases / 42 evidence links / 13 calculations / 36 clusters / 62 candidates / 10 hashes / 0 labels / 163 recorded attempts. Final document diffs and worktree status were inspected; application stack remains open. Source observations retain their original dates despite later approval and verification.
+
+## SEC pilot follow-up — IREN-S1 response fingerprint (2026-10-12)
+
+The live pilot build reached IREN-S1 after its SEC accession, form, and timing
+metadata matched the tracked source record, then stopped because the response
+bytes no longer matched the October 6 audit fingerprint. A TLS-verified fetch
+of the same SEC URL returned 3,222,608 bytes and SHA-256
+`7bcc6dd4cabd1ee8c3944611aac0e906469d158e4880d5939e9d35fd72aa2068`; the
+October 6 audit recorded 3,222,969 bytes and SHA-256
+`2e00e726b770f86cef150b0dda48a5ace7f5f61105268fcdb373a4bfc9644941`. That is
+a 361-byte difference. The old body was temporary and is no longer available,
+so its exact difference cannot be characterized. The current SEC filing's
+benchmark figures were checked: FY2025 revenue of USD 501.023 million, AI Cloud
+Services revenue of USD 16.394 million, and comparative FY2024 revenue of USD
+187.192 million (reported in USD thousands in the filing). Matching those
+values does not establish that every byte of the filing is unchanged.
+
+~~~jsonl
+{"source_id":"IREN-S1","url":"https://www.sec.gov/Archives/edgar/data/1878848/000187884825000063/iren-20250630.htm","observed_on":"2026-10-12","status":200,"bytes":3222608,"sha256":"7bcc6dd4cabd1ee8c3944611aac0e906469d158e4880d5939e9d35fd72aa2068","basis":"TLS-verified direct SEC fetch reported during the pilot build; SEC accession/form/timing matched and current benchmark figures were checked; prior response body unavailable for byte comparison"}
+~~~
+
+The source manifest keeps the original audit hash and pins the October 12 hash
+as `expected_raw_sha256` for this first pilot release. Future different bytes
+still fail the build pending a documented review. No local corpus release was
+published by the failed build.
+
+## SEC pilot follow-up — IREN-S2 response fingerprint (2026-10-12)
+
+The next build passed the pinned IREN-S1 response and reached IREN-S2. SEC
+submissions metadata matched its accession, 6-K form, and filing/acceptance
+dates. The SEC response hash differed from the October 6 audit record:
+`a4c9fcf80e46bbec529861621604d06889bb8165d76c69873c1240116ca5ba51` versus
+`5842f3385b58b38fdde0db49dd8b58555ba2ebc996ef8a62c300f8ffe8bd5c48`. The
+build did not report the new response's byte count, and the old response body
+was not retained, so no byte-level explanation is available. The current SEC
+page still identifies the October 2024 monthly update and reports USD 20,834
+electricity cost per Bitcoin and 19.9 EH/s average operating hashrate, matching
+the source markers required by the pilot.
+
+~~~jsonl
+{"source_id":"IREN-S2","url":"https://www.sec.gov/Archives/edgar/data/1878848/000187884824000029/irenoctober2024monthlyin.htm","observed_on":"2026-10-12","sha256":"a4c9fcf80e46bbec529861621604d06889bb8165d76c69873c1240116ca5ba51","basis":"Hash reported by the live collector after SEC accession/form/timing checks; current SEC page's October metrics checked; response byte count and previous response body unavailable"}
+~~~
+
+The source manifest preserves the October 6 audit hash and pins this response
+as `expected_raw_sha256` for the pilot. Any later different response remains a
+build failure until reviewed. The failed build published no local release.
+
+## SEC pilot follow-up — ASTS-S1 response fingerprint (2026-10-12)
+
+The next build passed the pinned IREN-S1 and IREN-S2 responses, then stopped at
+ASTS-S1. After the collector matched the SEC accession, 8-K form, and timing
+metadata, the returned HTML was 487,889 bytes with SHA-256
+`e451862c6fe961d3ea4ae4e4b7816ad96b91103147f39bc37184412368571d38`. The
+October 7 audit recorded 488,260 bytes and SHA-256
+`0739aad7fda1547969e8d46160166a0a4b5927512df4bc3cf39dab4b917a94c9`, a
+371-byte difference. The old response body was not retained. The build stops
+before text-marker validation on hash mismatch, so the current ASTS-S1 content
+still needs to be checked before updating its expected hash.
+
+~~~jsonl
+{"source_id":"ASTS-S1","url":"https://www.sec.gov/Archives/edgar/data/1780312/000095017024127096/asts-ex99_1.htm","observed_on":"2026-10-12","status":200,"bytes":487889,"sha256":"e451862c6fe961d3ea4ae4e4b7816ad96b91103147f39bc37184412368571d38","basis":"Hash reported by the live collector after SEC accession/form/timing and HTML checks; text markers not checked because build stops on a hash mismatch; previous response body unavailable"}
+~~~
+
+The new `audit-s1-s2` command checks current filing metadata and content markers
+for all six S1/S2 sources without saving their bodies. Its batch result is
+recorded below; it confirmed the selected filing and markers for ASTS-S1 as
+well as the other five sources.
+
+## SEC pilot follow-up — batch S1/S2 audit and hash pins (2026-10-12)
+
+The user ran `audit-s1-s2` with TLS verification enabled. For all six rows,
+`identity_timing_match` and `content_markers_match` were true, and no expected
+markers were missing. IREN-S1/S2 already matched their current manifest pins.
+ASTS-S1/S2 matched their selected filing and content markers despite differing
+from the older raw-response hashes. NBIS-S1/S2 had no prior SEC response hash
+and now have first-observation pins. The audit did not save the filing bodies.
+
+| Source | Current SEC bytes | Current SHA-256 | Earlier SEC audit SHA-256 |
+|---|---:|---|---|
+| NBIS-S1 | 238,471 | `0d901d101260595afa965709c4753895832e204900de14f01bd71b0982d9621b` | None recorded |
+| NBIS-S2 | 248,561 | `45142641ccd748dc5087b123b0cd50891ea73cf6f7cad16d14738fb330910089` | None recorded |
+| IREN-S1 | 3,222,608 | `7bcc6dd4cabd1ee8c3944611aac0e906469d158e4880d5939e9d35fd72aa2068` | `2e00e726b770f86cef150b0dda48a5ace7f5f61105268fcdb373a4bfc9644941` |
+| IREN-S2 | 22,635 | `a4c9fcf80e46bbec529861621604d06889bb8165d76c69873c1240116ca5ba51` | `5842f3385b58b38fdde0db49dd8b58555ba2ebc996ef8a62c300f8ffe8bd5c48` |
+| ASTS-S1 | 487,889 | `e451862c6fe961d3ea4ae4e4b7816ad96b91103147f39bc37184412368571d38` | `0739aad7fda1547969e8d46160166a0a4b5927512df4bc3cf39dab4b917a94c9` |
+| ASTS-S2 | 793,927 | `7bdeac2063a228191105402ea9b8a32c4c5be46e5c41a6c070f1c69c666f6138` | `d0a7fc0a0e30bf9f04a4ee386d1e3b8bb26662cc2d55e2f9288532674a673a88` |
+
+For IREN-S1/S2 and ASTS-S1/S2, the earlier and current hashes differ, but the
+previous response bodies are unavailable, so the byte-level cause is unknown.
+The successful identity/date and marker checks support using the current
+response fingerprints for this first pilot release; they do not prove every
+byte is substantively unchanged. All six current hashes are now recorded as
+`expected_raw_sha256`. The four earlier IREN/ASTS hashes remain in the source
+manifest and this log for provenance. The all-six check was read-only and did
+not publish a local corpus release.
+
+## SEC pilot follow-up — ASTS-S3 response fingerprint (2026-10-12)
+
+The first full build passed the six pinned S1/S2 sources and reached ASTS-S3.
+SEC submissions metadata matched its accession, 10-K form, and tracked filing,
+acceptance, and report dates. The response was 3,815,604 bytes with SHA-256
+`e23b37a9c055cd66dbfb2f87e6d30669d9e7fd2e1d4a199fac5e1a5448a0b7cb`; the
+October 7 audit recorded 3,815,975 bytes and SHA-256
+`48c517e0de345d17dfd54e091caa240251ba7b2d5221652f7214b2fefdcb6b50`, a
+371-byte difference. The prior body was not retained. Because the collector
+checks the raw hash before validating text markers, the build itself did not
+check the current response's markers. The user then ran the read-only
+single-source audit against SEC: identity and timing matched, all three
+expected content markers were present, and none were missing. Its reported
+size and SHA-256 matched the failed build's response. The official [SEC filing
+page](https://www.sec.gov/Archives/edgar/data/1780312/000095017025030909/asts-20241231.htm)
+also identifies the FY2024 Form 10-K and includes the expected filing text.
+The current hash is now pinned as `expected_raw_sha256`; the October 7 audit
+hash remains in `audit_raw_sha256` for provenance. The byte-level cause remains
+unknown because the prior body was not retained. The failed build published no
+release and discarded its staging files.
+
+## SEC pilot closeout — full audit and first release (2026-10-12)
+
+The full twelve-document audit completed at `2026-10-11T17:51:00.450184+00:00`
+(October 12 in Singapore). The first sandboxed attempt failed DNS resolution;
+the retry with approved network access succeeded using the previously supplied
+SEC contact only in the process environment. TLS verification remained enabled.
+All twelve rows matched SEC accession, form, acceptance, filing and report
+dates, extracted at least five visible blocks, and contained every required
+content marker. Seven previously refreshed pins matched again. The remaining
+five response observations were:
+
+| Source | Current bytes | Current SHA-256 | Prior SEC pin status |
+|---|---:|---|---|
+| NBIS-S3 | 28,161 | `c2da12dd7a0b7f8c05a693c753484ff5e26267625012bedcf08bf2c846cfe3a8` | None; first SEC observation |
+| IREN-S3 | 25,552 | `ece6b93aef0498c5b03d9c129081dc85a8ac99c9e6477bbf40a6a161c928951c` | None; first SEC observation |
+| ASTS-S4 | 2,261,212 | `492af07aaa6033b29c0f77954f4338bcee2436964a90e47b24950342b372ff21` | Older audit hash differs |
+| IREN-FY24-ORIGINAL | 3,624,266 | `61947396554941ee8588789da510fc28a643d107ea117ca04a01742e53729868` | None; first SEC observation |
+| IREN-FY24-AMENDED | 2,503,152 | `514708980048e096b012a9630532899890a15b5a651a26a912238b6466b19fe9` | None; first SEC observation |
+
+ASTS-S4's earlier record had 2,261,583 bytes and SHA-256
+`3cbcbd20c1151618592a10229d0051e4c99ddd3ff1234f4dabc90b26d5f12ecb`.
+The current response is 371 bytes shorter, as were the other ASTS response
+differences. This repeated size difference does not establish a cause or prove
+that substantive content is unchanged. Earlier bodies are unavailable for a
+direct comparison. After the identity/date and marker review, the current
+ASTS-S4 response was pinned and its older hash preserved. The four unpinned
+sources received their first SEC hashes. All twelve current hashes were
+finalized before publication of the initial release. Subsequent seed edits
+require a new corpus version.
+
+The complete live audit report is retained locally at
+`filing_corpus/local/reports/source-audit-20261011T175100Z.json`; generated
+reports are excluded from Git. It contains all twelve URLs, old/expected/current
+hashes, byte counts and check results. The collector's `audit-all` action
+exposes this full audit as one command without automatically accepting
+different hashes.
+
+The full build then succeeded at `2026-10-11T17:53:46.057726+00:00` (October 12
+in Singapore). `sec-qa-pilot-v1` contains 12 documents, 17,272,038 raw bytes and
+3,922 passages in ignored `filing_corpus/local/releases/`. A separate `verify`
+run passed the source-seed checksum, source identities and SEC dates, raw and
+extracted-text hashes, chunk-file hash, per-source passage counts and locators.
+Actual filing HTML is now retained in the immutable local release, allowing
+future byte comparisons. Five existing collector tests passed; Python
+compilation and CLI help checks passed. At this collection closeout, retrieval
+evaluation had not yet run. Later retrieval results are summarized in
+`PROJECT_PLAN.md`; collection-integrity checks do not establish answer quality.

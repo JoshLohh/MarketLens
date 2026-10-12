@@ -22,3 +22,10 @@ build/
 .codex/config.toml
 .agents/plugins/
 plugins/codex-council/
+
+# Local SEC snapshots and evaluation runs (source manifest and tooling are tracked)
+evaluation/filing_corpus/local/
+
+# Personal learning notes stay in this checkout
+.codex/learning-log.md
+.agents/skills/marketlens-learning-log/

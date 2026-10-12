@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "corpus_version": "sec-qa-pilot-v1",
+  "rights_policy": {
+    "scope": "SEC public EDGAR filing content; issuer-authored filing documents and exhibits only",
+    "reuse_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+    "access_url": "https://www.sec.gov/about/developer-resources",
+    "reviewed_on": "2026-10-11",
+    "excluded": "Issuer websites, linked publisher pages, graphics, and third-party exhibits"
+  },
+  "documents": [
+    {
+      "source_id": "NBIS-S1", "ticker": "NBIS", "cik": "1513845", "accession": "0001104659-24-112875", "form": "6-K", "document": "tm2427209d1_ex99-1.htm",
+      "benchmark_vintage_date": "2024-10-31", "issuer_publication_date": "2024-10-31", "reporting_period": "Q3 2024", "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+      "sec_metadata": {"acceptance": "2024-10-31T16:29:56.000Z", "filing_date": "2024-10-31", "report_date": "2024-10-31"},
+      "benchmark_url": "https://nebius.com/newsroom/nebius-group-n-v-announces-third-quarter-2024-financial-results",
+      "expected_raw_sha256": "0d901d101260595afa965709c4753895832e204900de14f01bd71b0982d9621b",
+      "validation_markers": ["third quarter 2024 financial results", "43.3 million", "2,288.2 million"]
+    },
+    {
+      "source_id": "NBIS-S2", "ticker": "NBIS", "cik": "1513845", "accession": "0001104659-25-015480", "form": "6-K", "document": "tm257185d1_ex99-1.htm",
+      "benchmark_vintage_date": "2025-02-20", "issuer_publication_date": "2025-02-20", "reporting_period": "Q4 and FY2024", "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+      "sec_metadata": {"acceptance": "2025-02-20T18:57:23.000Z", "filing_date": "2025-02-20", "report_date": "2025-02-20"},
+      "benchmark_url": "https://nebius.com/newsroom/nebius-group-n-v-announces-fourth-quarter-and-full-year-2024-financial-results",
+      "expected_raw_sha256": "45142641ccd748dc5087b123b0cd50891ea73cf6f7cad16d14738fb330910089",
+      "validation_markers": ["fourth quarter and full-year 2024 financial results", "117.5 million", "2,449.6 million"]
+    },
+    {
+      "source_id": "NBIS-S3", "ticker": "NBIS", "cik": "1513845", "accession": "0001104659-24-124570", "form": "6-K", "document": "tm2429858d1_ex99-1.htm",
+      "benchmark_vintage_date": "2024-12-02", "issuer_publication_date": "2024-12-02", "reporting_period": "Announcement dated 2024-12-02", "accounting_basis": "Transaction announcement; financing subject to closing",
+      "sec_metadata": {"acceptance": "2024-12-03T02:05:18.000Z", "filing_date": "2024-12-02", "report_date": "2024-12-02"},
+      "benchmark_url": "https://nebius.com/newsroom/nebius-announces-oversubscribed-strategic-equity-financing-of-usd-700-million-to-accelerate-roll-out-of-full-stack-ai-infrastructure",
+      "expected_raw_sha256": "c2da12dd7a0b7f8c05a693c753484ff5e26267625012bedcf08bf2c846cfe3a8",
+      "validation_markers": ["strategic equity financing", "700 million", "definitive agreements"]
+    },
+    {
+      "source_id": "IREN-S1", "ticker": "IREN", "cik": "1878848", "accession": "0001878848-25-000063", "form": "10-K", "document": "iren-20250630.htm",
+      "benchmark_vintage_date": "2025-08-28", "issuer_publication_date": null, "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives", "accounting_basis": "US GAAP comparative years in this filing",
+      "sec_metadata": {"acceptance": "2025-08-28T20:11:57.000Z", "filing_date": "2025-08-28", "report_date": "2025-06-30"},
+      "benchmark_url": "https://www.sec.gov/Archives/edgar/data/1878848/000187884825000063/iren-20250630.htm",
+      "audit_raw_sha256": "2e00e726b770f86cef150b0dda48a5ace7f5f61105268fcdb373a4bfc9644941",
+      "expected_raw_sha256": "7bcc6dd4cabd1ee8c3944611aac0e906469d158e4880d5939e9d35fd72aa2068",
+      "validation_markers": ["consolidated statements of operations", "501,023", "187,192"]
+    },
+    {
+      "source_id": "IREN-S2", "ticker": "IREN", "cik": "1878848", "accession": "0001878848-24-000029", "form": "6-K", "document": "irenoctober2024monthlyin.htm",
+      "benchmark_vintage_date": "2024-11-06", "issuer_publication_date": "2024-11-06", "reporting_period": "October 2024 monthly update", "accounting_basis": "Original operational metric vintage",
+      "sec_metadata": {"acceptance": "2024-11-06T11:21:54.000Z", "filing_date": "2024-11-06", "report_date": "2024-11-06"},
+      "benchmark_url": "https://www.sec.gov/Archives/edgar/data/1878848/000187884824000029/irenoctober2024monthlyin.htm",
+      "audit_raw_sha256": "5842f3385b58b38fdde0db49dd8b58555ba2ebc996ef8a62c300f8ffe8bd5c48",
+      "expected_raw_sha256": "a4c9fcf80e46bbec529861621604d06889bb8165d76c69873c1240116ca5ba51",
+      "validation_markers": ["October 2024", "20,834", "19.9 EH/s"]
+    },
+    {
+      "source_id": "IREN-S3", "ticker": "IREN", "cik": "1878848", "accession": "0001878848-24-000043", "form": "6-K", "document": "nov2024monthlyupdatevdc.htm",
+      "benchmark_vintage_date": "2024-12-06", "issuer_publication_date": "2024-12-06", "reporting_period": "November 2024 update revising October 2024", "accounting_basis": "Revised October operational metric vintage",
+      "sec_metadata": {"acceptance": "2024-12-06T11:55:26.000Z", "filing_date": "2024-12-06", "report_date": "2024-12-06"},
+      "benchmark_url": "https://irisenergy.gcs-web.com/news-releases/news-release-details/iren-november-2024-monthly-investor-update",
+      "expected_raw_sha256": "ece6b93aef0498c5b03d9c129081dc85a8ac99c9e6477bbf40a6a161c928951c",
+      "validation_markers": ["November 2024 Monthly Investor Update", "20,834", "18,896"]
+    },
+    {
+      "source_id": "ASTS-S1", "ticker": "ASTS", "cik": "1780312", "accession": "0000950170-24-127096", "form": "8-K", "document": "asts-ex99_1.htm",
+      "benchmark_vintage_date": "2024-11-14", "issuer_publication_date": "2024-11-14", "reporting_period": "Q3 2024", "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+      "sec_metadata": {"acceptance": "2024-11-14T21:24:17.000Z", "filing_date": "2024-11-14", "report_date": "2024-11-14"},
+      "benchmark_url": "https://www.sec.gov/Archives/edgar/data/1780312/000095017024127096/asts-ex99_1.htm",
+      "audit_raw_sha256": "0739aad7fda1547969e8d46160166a0a4b5927512df4bc3cf39dab4b917a94c9",
+      "expected_raw_sha256": "e451862c6fe961d3ea4ae4e4b7816ad96b91103147f39bc37184412368571d38",
+      "validation_markers": ["Third Quarter 2024", "171,946", "Adjusted Operating Expenses"]
+    },
+    {
+      "source_id": "ASTS-S2", "ticker": "ASTS", "cik": "1780312", "accession": "0000950170-25-031954", "form": "8-K", "document": "asts-ex99_1.htm",
+      "benchmark_vintage_date": "2025-03-03", "issuer_publication_date": "2025-03-03", "reporting_period": "Q4 and FY2024; SEC exhibit furnished 2025-03-04", "accounting_basis": "US GAAP financials",
+      "sec_metadata": {"acceptance": "2025-03-04T21:04:57.000Z", "filing_date": "2025-03-04", "report_date": "2025-03-04"},
+      "benchmark_url": "https://www.sec.gov/Archives/edgar/data/1780312/000095017025031954/asts-ex99_1.htm",
+      "audit_raw_sha256": "d0a7fc0a0e30bf9f04a4ee386d1e3b8bb26662cc2d55e2f9288532674a673a88",
+      "expected_raw_sha256": "7bdeac2063a228191105402ea9b8a32c4c5be46e5c41a6c070f1c69c666f6138",
+      "validation_markers": ["Fourth Quarter", "564,988", "4,418"]
+    },
+    {
+      "source_id": "ASTS-S3", "ticker": "ASTS", "cik": "1780312", "accession": "0000950170-25-030909", "form": "10-K", "document": "asts-20241231.htm",
+      "benchmark_vintage_date": "2025-03-03", "issuer_publication_date": null, "reporting_period": "FY ended 2024-12-31", "accounting_basis": "US GAAP",
+      "sec_metadata": {"acceptance": "2025-03-03T21:31:05.000Z", "filing_date": "2025-03-03", "report_date": "2024-12-31"},
+      "benchmark_url": "https://www.sec.gov/Archives/edgar/data/1780312/000095017025030909/asts-20241231.htm",
+      "audit_raw_sha256": "48c517e0de345d17dfd54e091caa240251ba7b2d5221652f7214b2fefdcb6b50",
+      "expected_raw_sha256": "e23b37a9c055cd66dbfb2f87e6d30669d9e7fd2e1d4a199fac5e1a5448a0b7cb",
+      "validation_markers": ["Form 10-K", "mobile network operators", "unmodified"]
+    },
+    {
+      "source_id": "ASTS-S4", "ticker": "ASTS", "cik": "1780312", "accession": "0000950170-24-127101", "form": "10-Q", "document": "asts-20240930.htm",
+      "benchmark_vintage_date": "2024-11-14", "issuer_publication_date": null, "reporting_period": "Q3 2024", "accounting_basis": "US GAAP; three-month and nine-month columns distinct",
+      "sec_metadata": {"acceptance": "2024-11-14T21:25:29.000Z", "filing_date": "2024-11-14", "report_date": "2024-09-30"},
+      "benchmark_url": "https://www.sec.gov/Archives/edgar/data/1780312/000095017024127101/asts-20240930.htm",
+      "audit_raw_sha256": "3cbcbd20c1151618592a10229d0051e4c99ddd3ff1234f4dabc90b26d5f12ecb",
+      "expected_raw_sha256": "492af07aaa6033b29c0f77954f4338bcee2436964a90e47b24950342b372ff21",
+      "validation_markers": ["Form 10-Q", "September 30, 2024", "1,100"]
+    },
+    {
+      "source_id": "IREN-FY24-ORIGINAL", "ticker": "IREN", "cik": "1878848", "accession": "0001628280-24-038677", "form": "20-F", "document": "iren-20240630.htm",
+      "benchmark_vintage_date": null, "issuer_publication_date": null, "reporting_period": "FY ended 2024-06-30", "accounting_basis": "Original IFRS filing vintage",
+      "sec_metadata": {"acceptance": "2024-08-28T20:31:20.000Z", "filing_date": "2024-08-28", "report_date": "2024-06-30"},
+      "benchmark_url": null,
+      "expected_raw_sha256": "61947396554941ee8588789da510fc28a643d107ea117ca04a01742e53729868",
+      "validation_markers": ["Form 20-F", "June 30, 2024", "IFRS"]
+    },
+    {
+      "source_id": "IREN-FY24-AMENDED", "ticker": "IREN", "cik": "1878848", "accession": "0001878848-25-000020", "form": "20-F/A", "document": "iren-20240630.htm",
+      "benchmark_vintage_date": null, "issuer_publication_date": null, "reporting_period": "FY ended 2024-06-30; amended 2025-03-20", "accounting_basis": "Amended IFRS filing vintage",
+      "sec_metadata": {"acceptance": "2025-03-20T10:34:45.000Z", "filing_date": "2025-03-20", "report_date": "2024-06-30"},
+      "supersedes": "IREN-FY24-ORIGINAL", "benchmark_url": null,
+      "expected_raw_sha256": "514708980048e096b012a9630532899890a15b5a651a26a912238b6466b19fe9",
+      "validation_markers": ["Form 20-F", "June 30, 2024", "Amendment No. 1"]
+    }
+  ]
+}
