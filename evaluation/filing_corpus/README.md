@@ -12,8 +12,8 @@ IREN-QA-07 units disagreement/rejected hybrid answer. These results do not
 establish a general quality winner or production readiness. The next project
 step is the private, on-demand Telegram Q&A MVP; no bot is integrated yet.
 Scheduled monitoring and alerts are deferred. The app framework and any
-persistent vector database remain undecided. Beginner-friendly retrieval
-settings and flow are in the [hybrid retrieval study guide](../../.codex/marketlens-study-guide.md#hybrid-retrieval-study-guide).
+persistent vector database remain undecided. The evaluation sections below
+document the retrieval settings, evidence measurements, and their limits.
 
 This evaluation slice uses twelve SEC-hosted documents: the ten source IDs in
 `evaluation/qa_benchmark.jsonl`, plus IREN's original FY2024 Form 20-F and its
@@ -880,12 +880,12 @@ The original Step 3B plan was to compare `bm25-ticker-v1` with
 `top10-table-context-v4` against an embeddings-plus-lexical method on the same
 21 development questions and unchanged `sec-qa-pilot-v1`. That retrieval-only
 comparison and the later paired answer-generation assessment have now run; see
-the completed results below and the [hybrid retrieval study guide](../../.codex/marketlens-study-guide.md#hybrid-retrieval-study-guide).
+the completed results below and the current status at the top of this README.
 The v14 exact-quote errors occur after retrieval, so embeddings alone are not a
-direct fix for them. The current work focuses on improving the active hybrid
-retrieval-to-evidence-to-answer direction while keeping the lexical result as a
-frozen comparison reference. Permanent encoder, provider, runtime and vector
-database decisions remain open.
+direct fix for them. At the time of the initial comparison, work continued on
+the hybrid retrieval-to-evidence-to-answer direction while keeping the lexical
+result as a frozen comparison reference. Permanent encoder, provider, runtime
+and vector database decisions remain open.
 
 ### Retrieval-only hybrid comparison — 2026-10-25
 

@@ -81,9 +81,7 @@ tuning cycle or paid pair just to reduce UNKNOWN counts.
 evaluate both saved evidence arms, but neither path is connected to a Telegram
 bot yet. The local encoder/runtime are scoped study settings, not a permanent
 provider or database decision. Keep the pilot immutable and use the nine exposed
-holdout questions only as regression checks. See the [hybrid retrieval study
-guide](.codex/marketlens-study-guide.md#hybrid-retrieval-study-guide) for
-settings and evidence flow.
+holdout questions only as regression checks. See the [filing-corpus README](evaluation/filing_corpus/README.md) for retrieval settings and evidence flow.
 The current SEC pilot uses a small custom HTML-to-text extractor rather than a
 structured financial-table parser. It keeps visible table-cell text together
 as row-like text blocks and retains the original HTML, but it does not model
