@@ -27,6 +27,19 @@ After approval, use `$codex-council:codex-hyper` for a substantial Mind-approved
 - Keep forecasting claims calibrated to chronological, point-in-time evaluation. Report sample size and limitations, and compare with the baselines in `PROJECT_PLAN.md`.
 - Do not invent an implementation stack, data provider, or database choice where the repository and project context leave it undecided.
 
+## Explain every change
+
+After each change, give the user a concise, beginner-friendly explanation in the chat so he can follow the project as it develops. Include:
+
+- The files changed and what each file is responsible for.
+- The functions added, modified, or removed; what each function does; and why that change was needed.
+- How the change affects behavior and fits into the surrounding flow, such as question → retrieval → evidence packing → answer validation.
+- The checks actually run, their results, and anything still unverified. Do not imply that an unrun check passed.
+
+For documentation or configuration changes without function changes, explicitly say that no functions changed. Keep these updates proportional to the change, and record meaningful work in the ignored `.codex/learning-log.md` using the project learning-log skill.
+
+Use neutral role wording in project source and Markdown. Do not include the user's personal name or hard-code their personal home-directory path; use portable repository/home-directory locations instead.
+
 ## Session closeout
 
 When the user invokes `$handoff`, update `.codex/context.md` using the handoff skill. Do not rewrite the stable project constraints during a progress update. When the user invokes `$yeet`, follow the yeet skill; pushing requires explicit push intent such as `$yeet push`.

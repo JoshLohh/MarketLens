@@ -29,3 +29,6 @@ evaluation/filing_corpus/local/
 # Personal learning notes stay in this checkout
 .codex/learning-log.md
 .agents/skills/marketlens-learning-log/
+
+# Private project study notes stay local and out of Git
+.codex/marketlens-study-guide.md

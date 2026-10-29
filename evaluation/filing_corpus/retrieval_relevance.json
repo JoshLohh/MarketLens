@@ -1,0 +1,4515 @@
+{
+  "schema_version": "retrieval-relevance-v1",
+  "corpus_version": "sec-qa-pilot-v1",
+  "chunks_sha256": "0de2fbe3a00c1aaedf1906553d04d442028584da698c0ef3d554b06171048bf8",
+  "benchmark_sha256": "c8a4df8722bebbf35be644b2ec3281bc36f6a3d6b449580af6212664139240f4",
+  "split": "development",
+  "review_status": "source-reviewed",
+  "review": {
+    "root": "Exact source spans, context and verified alternatives inspected; historical lexical exposure disclosed.",
+    "verifier": "hybrid_label_verifier; independently inspected all39 groups blind to method rankings/packs; all exact spans/hashes passed; no remaining content/relevance blocker.",
+    "date": "2026-10-25",
+    "disagreements": [
+      {
+        "finding": "Replace missing issuer publication dates with benchmark vintage dates.",
+        "resolution": "Rejected: issuer_publication_date remains null as in frozen manifest. SEC filing/acceptance metadata and benchmark_vintage_date are separately preserved. Verifier agreed."
+      },
+      {
+        "finding": "S4:00138/00139 lacks a three-month 2024 header.",
+        "resolution": "Retracted after reinspection: annotated span613:731 explicitly has both three-month and nine-month2024 headings; first common-stockholder row amount is Q3 (171,946) thousand."
+      },
+      {
+        "finding": "Deduplicate equivalent IREN tables.",
+        "resolution": "Only identical alternatives deduplicate. Distinct verified passage locations remain valid OR alternatives; suppressing them would undercount sufficient retrieval. Corpus passages are never deduplicated or rebuilt."
+      },
+      {
+        "finding": "IREN-S1:00676 was omitted as a valid GAAP-basis alternative.",
+        "resolution": "Accepted post-run source correction, verified independently. Retain both annotation versions; do not present revised metrics as preregistered or blind."
+      }
+    ]
+  },
+  "policy": {
+    "requirements": "AND of groups; OR of source-verified alternatives; AND of exact spans within an alternative.",
+    "unknown": "Unresolved labels never pass or leave denominators; block paid-stage recommendation.",
+    "financial_denominator": 14,
+    "narrative_denominator": 5,
+    "abstention_scope_denominator": 2,
+    "answerable_denominator": 19,
+    "limits": "Frozen development annotations are not exhaustive corpus qrels or a blind test. Source recall remains literal and separate. Packed evidence validity is not answer correctness. Source metadata supplies scoped basis/vintage where unambiguous; quoted text resolves qualified basis."
+  },
+  "cases": [
+    {
+      "case_id": "NBIS-QA-01",
+      "ticker": "NBIS",
+      "kind": "financial",
+      "question_sha256": "028757d32773c8bdb3426c721bdfffef7a6c95b612f29596c01bd9c579e704f1",
+      "expected_source_ids": [
+        "NBIS-S2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "annual-revenue",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00004",
+                  "start": 378,
+                  "end": 486,
+                  "quote": "| In USD $ millions | | | | Three months ended December 31 | | | | | | Twelve months ended December 31 | | |",
+                  "roles": [
+                    "units",
+                    "period"
+                  ],
+                  "chunk_text_sha256": "dc36fdf528767f8c08a8867038e0c905df6b073ee55aad5e47fd692c839041cb"
+                },
+                {
+                  "chunk_id": "NBIS-S2:00004",
+                  "start": 487,
+                  "end": 596,
+                  "quote": "| | | | | 2023 | | | | | | 2024 | | | | | | Change | | | | | | 2023 | | | | | | 2024 | | | | | | Change | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "dc36fdf528767f8c08a8867038e0c905df6b073ee55aad5e47fd692c839041cb"
+                },
+                {
+                  "chunk_id": "NBIS-S2:00004",
+                  "start": 597,
+                  "end": 737,
+                  "quote": "| Revenues | | | | | | 6.7 | | | | | | | | 37.9 | | | | | | | | 466 | | % | | | | | | 20.9 | | | | | | | | 117.5 | | | | | | | | 462 | | % |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "dc36fdf528767f8c08a8867038e0c905df6b073ee55aad5e47fd692c839041cb"
+                }
+              ]
+            },
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00001",
+                  "start": 12,
+                  "end": 104,
+                  "quote": "For the full year 2024, the Group’s revenue of $117.5 million increased 462% year-over-year.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "746efc898b88657afe5de958a8c847829f02827efb2a44fbca58add3f0110c85"
+                }
+              ]
+            }
+          ],
+          "notes": "Recognized consolidated annual revenue, not ARR; USD context is established by this audited release and its USD-millions table.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "NBIS-QA-02",
+      "ticker": "NBIS",
+      "kind": "financial",
+      "question_sha256": "f626f75df9b39b0534a7702b7e29d41a2ae283e9671006be484807b40f09902a",
+      "expected_source_ids": [
+        "NBIS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "september-cash",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00002",
+                  "start": 314,
+                  "end": 419,
+                  "quote": "Cash and cash equivalents as of September 30, 2024, stood at USD 2,288.2 million on a consolidated basis.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "c77d81736ab6e3fe57a1863eeae6848c80a60a7ffc92228e93b64cccc36dba04"
+                }
+              ]
+            },
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 244,
+                  "end": 273,
+                  "quote": "(in millions of U.S. dollars)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                },
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 296,
+                  "end": 350,
+                  "quote": "| | | | | December 31, | | | | | | September 30, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                },
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 351,
+                  "end": 389,
+                  "quote": "| | | | | 2023* | | | | | | 2024 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                },
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 461,
+                  "end": 528,
+                  "quote": "| Cash and cash equivalents | | | | 116.1 | | | | | | 2,288.2 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "NBIS-QA-03",
+      "ticker": "NBIS",
+      "kind": "financial",
+      "question_sha256": "7db038494bb47b008992f5949723087912c86c37df690b2c2b0b581be8f01fac",
+      "expected_source_ids": [
+        "NBIS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "quarter-capex",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00002",
+                  "start": 434,
+                  "end": 572,
+                  "quote": "Capital expenditures totaled USD 167.0 million and USD 387.6 million for the three and nine months ended September 30, 2024, respectively.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "c77d81736ab6e3fe57a1863eeae6848c80a60a7ffc92228e93b64cccc36dba04"
+                }
+              ]
+            }
+          ],
+          "notes": "The respectively linkage distinguishes three-month 167.0 from nine-month 387.6.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "NBIS-QA-05",
+      "ticker": "NBIS",
+      "kind": "narrative",
+      "question_sha256": "4f42cec1c62d156376eb054b0c905ec1efbe28df01a95b9845bb71721c29a0e3",
+      "expected_source_ids": [
+        "NBIS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "arr-definition",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00007",
+                  "start": 520,
+                  "end": 633,
+                  "quote": "Annualized run-rate revenue by the end of the period (revenue for last month of the period multiplied by twelve).",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "3228a87326c4b9854cbad535708b6ba7a423cd687aef77abcc822537227e2fa0"
+                }
+              ]
+            }
+          ],
+          "notes": "Definition grounds the interpretation that this run-rate extrapolation is not recognized full-year revenue; no unsupported negative source quote is required.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "NBIS-QA-06",
+      "ticker": "NBIS",
+      "kind": "narrative",
+      "question_sha256": "a5a3f8e138f18f749c6d62387d0e244bc63d29661319fc330b73137d526fad40",
+      "expected_source_ids": [
+        "NBIS-S2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "below-guidance",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00007",
+                  "start": 12,
+                  "end": 82,
+                  "quote": "December 2024 ARR for Nebius was $90 million, below previous guidance.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "b0010aa123187115cbd35fc4db8afbaa6bce3b5b26aba1939deeee198813e9e6"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "acquisition-lead-times",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00007",
+                  "start": 83,
+                  "end": 151,
+                  "quote": "This was primarily due to longer lead times for customer acquisition",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "b0010aa123187115cbd35fc4db8afbaa6bce3b5b26aba1939deeee198813e9e6"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "sales-and-migration",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00007",
+                  "start": 153,
+                  "end": 299,
+                  "quote": "while the Company was in the process of building out its sales and marketing teams and also migrating customers over to its new AI-cloud platform.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "b0010aa123187115cbd35fc4db8afbaa6bce3b5b26aba1939deeee198813e9e6"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "NBIS-QA-07",
+      "ticker": "NBIS",
+      "kind": "financial",
+      "question_sha256": "fd712a804149139af6ef0f5e01afb81cc97f25aaf74f8475deeb2432ddfd5b0c",
+      "expected_source_ids": [
+        "NBIS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "quarter-capex",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00002",
+                  "start": 434,
+                  "end": 572,
+                  "quote": "Capital expenditures totaled USD 167.0 million and USD 387.6 million for the three and nine months ended September 30, 2024, respectively.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "c77d81736ab6e3fe57a1863eeae6848c80a60a7ffc92228e93b64cccc36dba04"
+                }
+              ]
+            }
+          ],
+          "notes": "The respectively linkage distinguishes three-month 167.0 from nine-month 387.6.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "nine-month-capex",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00002",
+                  "start": 434,
+                  "end": 572,
+                  "quote": "Capital expenditures totaled USD 167.0 million and USD 387.6 million for the three and nine months ended September 30, 2024, respectively.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "c77d81736ab6e3fe57a1863eeae6848c80a60a7ffc92228e93b64cccc36dba04"
+                }
+              ]
+            }
+          ],
+          "notes": "The respectively linkage distinguishes three-month 167.0 from nine-month 387.6.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "NBIS-QA-09",
+      "ticker": "NBIS",
+      "kind": "financial",
+      "question_sha256": "f2cf7da140f4c0b8de7d5aa9acae057075b8511f9004888dd647e4e4ac8e6ab4",
+      "expected_source_ids": [
+        "NBIS-S1",
+        "NBIS-S2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "september-cash",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00002",
+                  "start": 314,
+                  "end": 419,
+                  "quote": "Cash and cash equivalents as of September 30, 2024, stood at USD 2,288.2 million on a consolidated basis.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "c77d81736ab6e3fe57a1863eeae6848c80a60a7ffc92228e93b64cccc36dba04"
+                }
+              ]
+            },
+            {
+              "source_id": "NBIS-S1",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-24-112875",
+                "issuer_publication_date": "2024-10-31",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2024-10-31T16:29:56.000Z",
+                  "filing_date": "2024-10-31",
+                  "report_date": "2024-10-31"
+                }
+              },
+              "benchmark_vintage_date": "2024-10-31",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 244,
+                  "end": 273,
+                  "quote": "(in millions of U.S. dollars)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                },
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 296,
+                  "end": 350,
+                  "quote": "| | | | | December 31, | | | | | | September 30, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                },
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 351,
+                  "end": 389,
+                  "quote": "| | | | | 2023* | | | | | | 2024 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                },
+                {
+                  "chunk_id": "NBIS-S1:00037",
+                  "start": 461,
+                  "end": 528,
+                  "quote": "| Cash and cash equivalents | | | | 116.1 | | | | | | 2,288.2 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6a576147b6ca3e13cf0b2173876bdabea98b8e6662b1ad0ac129b6eb82a8e7ac"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "december-cash",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00003",
+                  "start": 440,
+                  "end": 547,
+                  "quote": "Total cash and cash equivalents as of December 31, 2024, stood at $2,449.6 million on a consolidated basis.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "56a4aeb7065c8a41760d8ab0398481576f20d9091c1a6c0ea48914bf35441514"
+                }
+              ]
+            },
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00001",
+                  "start": 105,
+                  "end": 206,
+                  "quote": "Cash and cash equivalents as of December 31, 2024, stood at $2,449.6 million on a consolidated basis.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "746efc898b88657afe5de958a8c847829f02827efb2a44fbca58add3f0110c85"
+                }
+              ]
+            },
+            {
+              "source_id": "NBIS-S2",
+              "source_metadata": {
+                "ticker": "NBIS",
+                "accession": "0001104659-25-015480",
+                "issuer_publication_date": "2025-02-20",
+                "reporting_period": "Q4 and FY2024",
+                "accounting_basis": "US GAAP; issuer operational ARR is separately defined",
+                "sec_metadata": {
+                  "acceptance": "2025-02-20T18:57:23.000Z",
+                  "filing_date": "2025-02-20",
+                  "report_date": "2025-02-20"
+                }
+              },
+              "benchmark_vintage_date": "2025-02-20",
+              "spans": [
+                {
+                  "chunk_id": "NBIS-S2:00038",
+                  "start": 244,
+                  "end": 273,
+                  "quote": "(in millions of U.S. dollars)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "ed64d1b42b56bc5856ecdef6bfa70ba93ea28afa04221d80a5ef20dfab97c914"
+                },
+                {
+                  "chunk_id": "NBIS-S2:00038",
+                  "start": 296,
+                  "end": 349,
+                  "quote": "| | | | | December 31, | | | | | | December 31, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "ed64d1b42b56bc5856ecdef6bfa70ba93ea28afa04221d80a5ef20dfab97c914"
+                },
+                {
+                  "chunk_id": "NBIS-S2:00038",
+                  "start": 350,
+                  "end": 388,
+                  "quote": "| | | | | 2023* | | | | | | 2024 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "ed64d1b42b56bc5856ecdef6bfa70ba93ea28afa04221d80a5ef20dfab97c914"
+                },
+                {
+                  "chunk_id": "NBIS-S2:00038",
+                  "start": 432,
+                  "end": 507,
+                  "quote": "| Cash and cash equivalents | | | | | | 116.1 | | | | | | | | 2,449.6 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "ed64d1b42b56bc5856ecdef6bfa70ba93ea28afa04221d80a5ef20dfab97c914"
+                }
+              ]
+            }
+          ],
+          "notes": "Dollar sign in release highlights uses the release USD context; cash balance difference is not cash flow.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-01",
+      "ticker": "IREN",
+      "kind": "financial",
+      "question_sha256": "879cfb12d9f00269fe61e98976cc183a3f08671decd6b74f979c0f840278464a",
+      "expected_source_ids": [
+        "IREN-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "fy2025-revenue",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            }
+          ],
+          "notes": "Use FY June 30 columns in the same 2025 US GAAP filing; no older IFRS figures.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-03",
+      "ticker": "IREN",
+      "kind": "financial",
+      "question_sha256": "1cf2f1eb1312fbf70c75ae4cd5746aa47011fb3b08360fb931eeb4543339aa70",
+      "expected_source_ids": [
+        "IREN-S2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "october-bitcoin",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 155,
+                  "end": 195,
+                  "quote": "monthly investor update for October 2024",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                },
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 361,
+                  "end": 378,
+                  "quote": "439 Bitcoin mined",
+                  "roles": [
+                    "row",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 644,
+                  "end": 676,
+                  "quote": "Key Metrics Oct-24 Sep-24 Aug-24",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                },
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 820,
+                  "end": 900,
+                  "quote": "Bitcoin Mining2 Average operating hashrate 19.9 EH/s 16.5 EH/s 10.9 EH/s Bitcoin",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                },
+                {
+                  "chunk_id": "IREN-S2:00002",
+                  "start": 0,
+                  "end": 29,
+                  "quote": "mined 439 BTC 347 BTC 245 BTC",
+                  "roles": [
+                    "row",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "aa4e82e5175f645f9fcb33266ffb44eb35c8538cfbfe5ade5579c1daafa80450"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "bitcoin-net-pool-fees",
+          "kind": "qualifier",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00008",
+                  "start": 257,
+                  "end": 456,
+                  "quote": "Bitcoin and Bitcoin mined in this investor update are presented in accordance with our revenue recognition policy which is determined on a Bitcoin received basis (post deduction of mining pool fees).",
+                  "roles": [
+                    "qualifier"
+                  ],
+                  "chunk_text_sha256": "7e319e570668dae506295a8ed621dd974b6c21f6736bb5523f644f823662c459"
+                }
+              ]
+            }
+          ],
+          "notes": "Required benchmark metric qualification; a gross Bitcoin count would change the metric.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-04",
+      "ticker": "IREN",
+      "kind": "financial",
+      "question_sha256": "543b334eca12817433dac224877b88afed9e4ea102c8a7058ed06273cc9f58c0",
+      "expected_source_ids": [
+        "IREN-S2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "october-installed",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 155,
+                  "end": 195,
+                  "quote": "monthly investor update for October 2024",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                },
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 381,
+                  "end": 439,
+                  "quote": "21 EH/s installed (16 J/TH efficiency); 31 EH/s in 4Q 2024",
+                  "roles": [
+                    "row",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                }
+              ]
+            }
+          ],
+          "notes": "Installed October month-end capacity is distinct from monthly average; 31 EH/s is a future target.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "october-average",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 644,
+                  "end": 676,
+                  "quote": "Key Metrics Oct-24 Sep-24 Aug-24",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                },
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 836,
+                  "end": 892,
+                  "quote": "Average operating hashrate 19.9 EH/s 16.5 EH/s 10.9 EH/s",
+                  "roles": [
+                    "row",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-05",
+      "ticker": "IREN",
+      "kind": "narrative",
+      "question_sha256": "9d406e158dbbebc83b9454c7594b37f20e4d4ab4d93a34daec7dfaa4540258c1",
+      "expected_source_ids": [
+        "IREN-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "transition-to-gaap",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 176,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 425,
+                  "end": 559,
+                  "quote": "The Group previously prepared its financial statements, up to and including nine months ended March 31, 2025, in accordance with IFRS.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "restated-comparatives",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 177,
+                  "end": 266,
+                  "quote": "All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 560,
+                  "end": 754,
+                  "quote": "Accordingly, the Group has prepared financial statements that comply with GAAP applicable as at June 30, 2025, together with the comparative year data for the years ended June 30, 2024 and 2023.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-07",
+      "ticker": "IREN",
+      "kind": "financial",
+      "question_sha256": "4f0c5c17a339bca92bbb41c246594c430fac5c838960b44b4c82f62acf187c94",
+      "expected_source_ids": [
+        "IREN-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "fy2024-gaap-revenue",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            }
+          ],
+          "notes": "Use FY June 30 columns in the same 2025 US GAAP filing; no older IFRS figures.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "fy2025-revenue",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00662",
+                  "start": 0,
+                  "end": 266,
+                  "quote": "Effective this fiscal year, we have transitioned from International Financial Reporting Standards, as adopted by the International Accounting Standards Board (“IFRS”), to GAAP. All comparative figures in this Annual Report have been adjusted to GAAP for consistency.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "34ceb142881c56caf45d93737e046f252ad2a98e700d0476da3b570117eab4a0"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00924",
+                  "start": 292,
+                  "end": 424,
+                  "quote": "The Consolidated Financial Statements for the year ended June 30, 2025 are the first the Group has prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "9d3466548fb6bdb6d85e2d574f45e16d1175cd3f5a7cea429b0163112862e905"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 616,
+                  "end": 692,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 144,
+                  "end": 196,
+                  "quote": "for the years ended June 30, 2025 and 2024 and 2023.",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 281,
+                  "end": 323,
+                  "quote": "| | | | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00730",
+                  "start": 324,
+                  "end": 393,
+                  "quote": "| | | | | ($ thousands) | | | | ($ thousands) | | | | ($ thousands) |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "680cf3e6575aec2716f4d874623e2092bb9e381a452ffcb7a1ab2f7cb97c69c9"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 608,
+                  "end": 684,
+                  "quote": "| Total revenue | | | | 501,023 | | | | | | 187,192 | | | | | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 121,
+                  "end": 170,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 342,
+                  "end": 385,
+                  "quote": "| Note | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00826",
+                  "start": 257,
+                  "end": 341,
+                  "quote": "| (in USD thousands, except share and per share data) | | | | Years ended June 30, |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "9bd5696fd8e0b6bbe08dab6eb081679ebe1fb02b39b387a35b201b22e10225ed"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S1",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-25-000063",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2025-06-30 with US GAAP comparatives",
+                "accounting_basis": "US GAAP comparative years in this filing",
+                "sec_metadata": {
+                  "acceptance": "2025-08-28T20:11:57.000Z",
+                  "filing_date": "2025-08-28",
+                  "report_date": "2025-06-30"
+                }
+              },
+              "benchmark_vintage_date": "2025-08-28",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 781,
+                  "end": 871,
+                  "quote": "| Total revenue | | $ | | 501,023 | | | | | | $ | | 187,192 | | | | | | $ | | 75,509 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 53,
+                  "end": 102,
+                  "quote": "For the years ended June 30, 2025, 2024, and 2023",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00949",
+                  "start": 522,
+                  "end": 579,
+                  "quote": "| (in USD thousands) | | 2025 | | | | 2024 | | | | 2023 |",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "6b514af30df1cb4709099c576c3a369938a39cde08806705add701239e079286"
+                },
+                {
+                  "chunk_id": "IREN-S1:00676",
+                  "start": 336,
+                  "end": 714,
+                  "quote": "As of December 31, 2024, the Group no longer met the definition of a \"foreign private issuer\" under U.S. federal securities regulations and is therefore required to file an annual report on Form 10-K covering the years ended June 30, 2025, 2024 and 2023. Accordingly, this Annual Report on Form 10-K contains audited annual financial statements prepared in accordance with GAAP.",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "3ffa0e5ea81035677cbb96a9da2f0cccfd43f79ee3731d50dba0686cc88651ea"
+                }
+              ]
+            }
+          ],
+          "notes": "Use FY June 30 columns in the same 2025 US GAAP filing; no older IFRS figures.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-08",
+      "ticker": "IREN",
+      "kind": "financial",
+      "question_sha256": "4461b19ea3066f3a7cedf1b211f2817818adc26d7281006a061516486c39f5e4",
+      "expected_source_ids": [
+        "IREN-S2",
+        "IREN-S3"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "original-october-cost",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00001",
+                  "start": 644,
+                  "end": 676,
+                  "quote": "Key Metrics Oct-24 Sep-24 Aug-24",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "a2f19d66ed3f7e8a66e336da02ef8b62b012d3c749b0fd084b884518395d5df0"
+                },
+                {
+                  "chunk_id": "IREN-S2:00002",
+                  "start": 76,
+                  "end": 136,
+                  "quote": "Electricity cost (per Bitcoin) ($20,834) ($23,603) ($29,958)",
+                  "roles": [
+                    "row",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "aa4e82e5175f645f9fcb33266ffb44eb35c8538cfbfe5ade5579c1daafa80450"
+                }
+              ]
+            }
+          ],
+          "notes": "Original November 6 vintage, positive expense magnitude 20,834 USD/BTC; dollar currency follows the audited benchmark source interpretation.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "revised-october-cost",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "IREN-S3",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000043",
+                "issuer_publication_date": "2024-12-06",
+                "reporting_period": "November 2024 update revising October 2024",
+                "accounting_basis": "Revised October operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-12-06T11:55:26.000Z",
+                  "filing_date": "2024-12-06",
+                  "report_date": "2024-12-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-12-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S3:00001",
+                  "start": 814,
+                  "end": 847,
+                  "quote": "Key Metrics Nov-24 Oct-24* Sep-24",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "0fdb53c81fa921dc8b0cb7794b5ff7e909d9a3f6abdea121b05b80de69182630"
+                },
+                {
+                  "chunk_id": "IREN-S3:00002",
+                  "start": 104,
+                  "end": 165,
+                  "quote": "Electricity cost (per Bitcoin) ($22,575) ($18,896)* ($23,603)",
+                  "roles": [
+                    "row",
+                    "units"
+                  ],
+                  "chunk_text_sha256": "f6e6aaa859b11dfcc201b94a1bbbc7224fdcb82e5fbabe20e33a4b52ffc82b96"
+                },
+                {
+                  "chunk_id": "IREN-S3:00002",
+                  "start": 425,
+                  "end": 497,
+                  "quote": "*Revision of Oct-24 electricity cost per Bitcoin from $20,834 to $18,896",
+                  "roles": [
+                    "vintage"
+                  ],
+                  "chunk_text_sha256": "f6e6aaa859b11dfcc201b94a1bbbc7224fdcb82e5fbabe20e33a4b52ffc82b96"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S3",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000043",
+                "issuer_publication_date": "2024-12-06",
+                "reporting_period": "November 2024 update revising October 2024",
+                "accounting_basis": "Revised October operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-12-06T11:55:26.000Z",
+                  "filing_date": "2024-12-06",
+                  "report_date": "2024-12-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-12-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S3:00002",
+                  "start": 425,
+                  "end": 658,
+                  "quote": "*Revision of Oct-24 electricity cost per Bitcoin from $20,834 to $18,896 reflects restatement of Childress net electricity cost from 3.06 c/kWh to 2.42 c/kWh based on Congestion Revenue Rights credits received after Oct-24 month-end.",
+                  "roles": [
+                    "row",
+                    "period",
+                    "units",
+                    "vintage"
+                  ],
+                  "chunk_text_sha256": "f6e6aaa859b11dfcc201b94a1bbbc7224fdcb82e5fbabe20e33a4b52ffc82b96"
+                }
+              ]
+            }
+          ],
+          "notes": "Revised December 6 vintage, not November cost; comparisons preserve both release identities.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "IREN-QA-10",
+      "ticker": "IREN",
+      "kind": "abstention_scope",
+      "question_sha256": "65134b407d9363362dd3878bda332991868425874ca2ab88070412f6bee7ece1",
+      "expected_source_ids": [
+        "IREN-S2",
+        "IREN-S3"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "scope-IREN-S2",
+          "kind": "scope_source",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": []
+            }
+          ],
+          "notes": "Source presence is scope coverage only, never proof of universal absence.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "scope-IREN-S3",
+          "kind": "scope_source",
+          "alternatives": [
+            {
+              "source_id": "IREN-S3",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000043",
+                "issuer_publication_date": "2024-12-06",
+                "reporting_period": "November 2024 update revising October 2024",
+                "accounting_basis": "Revised October operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-12-06T11:55:26.000Z",
+                  "filing_date": "2024-12-06",
+                  "report_date": "2024-12-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-12-06",
+              "spans": []
+            }
+          ],
+          "notes": "Source presence is scope coverage only, never proof of universal absence.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "hardware-profit-excludes-costs",
+          "kind": "qualifier",
+          "alternatives": [
+            {
+              "source_id": "IREN-S2",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000029",
+                "issuer_publication_date": "2024-11-06",
+                "reporting_period": "October 2024 monthly update",
+                "accounting_basis": "Original operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-11-06T11:21:54.000Z",
+                  "filing_date": "2024-11-06",
+                  "report_date": "2024-11-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S2:00008",
+                  "start": 51,
+                  "end": 253,
+                  "quote": "Hardware profit margin for Bitcoin mining and AI Cloud Services is calculated as revenue less net electricity costs, divided by revenue (for each respective revenue stream) and excludes all other costs.",
+                  "roles": [
+                    "qualifier"
+                  ],
+                  "chunk_text_sha256": "7e319e570668dae506295a8ed621dd974b6c21f6736bb5523f644f823662c459"
+                }
+              ]
+            },
+            {
+              "source_id": "IREN-S3",
+              "source_metadata": {
+                "ticker": "IREN",
+                "accession": "0001878848-24-000043",
+                "issuer_publication_date": "2024-12-06",
+                "reporting_period": "November 2024 update revising October 2024",
+                "accounting_basis": "Revised October operational metric vintage",
+                "sec_metadata": {
+                  "acceptance": "2024-12-06T11:55:26.000Z",
+                  "filing_date": "2024-12-06",
+                  "report_date": "2024-12-06"
+                }
+              },
+              "benchmark_vintage_date": "2024-12-06",
+              "spans": [
+                {
+                  "chunk_id": "IREN-S3:00008",
+                  "start": 692,
+                  "end": 894,
+                  "quote": "Hardware profit margin for Bitcoin mining and AI Cloud Services is calculated as revenue less net electricity costs, divided by revenue (for each respective revenue stream) and excludes all other costs.",
+                  "roles": [
+                    "qualifier"
+                  ],
+                  "chunk_text_sha256": "ae3bf2e186c5d42ece399c0e0a6a0ccc13001d23cce229b7a3cb73cd354fb536"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-01",
+      "ticker": "ASTS",
+      "kind": "financial",
+      "question_sha256": "11c05db0b4b5cddd2592ab12d578797b40f9df9deef8c55c170a75f9e3c0740d",
+      "expected_source_ids": [
+        "ASTS-S4"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "q3-revenue",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S4",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127101",
+                "issuer_publication_date": null,
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; three-month and nine-month columns distinct",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:25:29.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-09-30"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 60,
+                  "end": 115,
+                  "quote": "(Dollars in thousands, except share and per share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 188,
+                  "end": 300,
+                  "quote": "| | | | | For the Three Months Ended September 30, | | | | | | | | For the Nine Months Ended September 30, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 301,
+                  "end": 376,
+                  "quote": "| | | | | 2024 | | | | | | 2023 | | | | | | | | 2024 | | | | | | 2023 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 433,
+                  "end": 537,
+                  "quote": "| Revenues | | | | $ | | 1,100 | | | | | | $ | | - | | | | | | | | $ | | 2,500 | | | | | | $ | | - | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 181,
+                  "end": 236,
+                  "quote": "(Dollars in thousands, except share and per share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 309,
+                  "end": 421,
+                  "quote": "| | | | | For the Three Months Ended September 30, | | | | | | | | For the Nine Months Ended September 30, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 422,
+                  "end": 497,
+                  "quote": "| | | | | 2024 | | | | | | 2023 | | | | | | | | 2024 | | | | | | 2023 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 554,
+                  "end": 658,
+                  "quote": "| Revenues | | | | $ | | 1,100 | | | | | | $ | | - | | | | | | | | $ | | 2,500 | | | | | | $ | | - | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                }
+              ]
+            }
+          ],
+          "notes": "Equivalent Q3 earnings release and 10-Q explicitly provide the same 1,100 thousand in the first three-month 2024 column.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-02",
+      "ticker": "ASTS",
+      "kind": "financial",
+      "question_sha256": "62b10ae6bb9cda0be6f39623bfaec7346b7e55c5ffb426bf99fc259145de3682",
+      "expected_source_ids": [
+        "ASTS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "q3-common-loss",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 181,
+                  "end": 236,
+                  "quote": "(Dollars in thousands, except share and per share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 309,
+                  "end": 421,
+                  "quote": "| | | | | For the Three Months Ended September 30, | | | | | | | | For the Nine Months Ended September 30, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00019",
+                  "start": 422,
+                  "end": 497,
+                  "quote": "| | | | | 2024 | | | | | | 2023 | | | | | | | | 2024 | | | | | | 2023 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "61537bb5c1ccfb743b9f1b503f3a35026d675d0119edcedce9a95fd38a0ec1eb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00022",
+                  "start": 388,
+                  "end": 554,
+                  "quote": "| Net loss attributable to common stockholders | | | | $ | | (171,946 | | ) | | | | $ | | (20,909 | | ) | | | | | | $ | | (264,226 | | ) | | | | $ | | (55,635 | | ) |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "87fcd3831ac74e4834c3aa1a73423aa94ab6fbf4551df8abd797ea0b6907f19b"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S4",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127101",
+                "issuer_publication_date": null,
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; three-month and nine-month columns distinct",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:25:29.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-09-30"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 60,
+                  "end": 115,
+                  "quote": "(Dollars in thousands, except share and per share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 188,
+                  "end": 300,
+                  "quote": "| | | | | For the Three Months Ended September 30, | | | | | | | | For the Nine Months Ended September 30, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00010",
+                  "start": 301,
+                  "end": 376,
+                  "quote": "| | | | | 2024 | | | | | | 2023 | | | | | | | | 2024 | | | | | | 2023 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "3154872939a5b26710e6cee96e89b9c4b8a5e1a8bb91194e893848e34fce38d8"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00013",
+                  "start": 388,
+                  "end": 554,
+                  "quote": "| Net loss attributable to common stockholders | | | | $ | | (171,946 | | ) | | | | $ | | (20,909 | | ) | | | | | | $ | | (264,226 | | ) | | | | $ | | (55,635 | | ) |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "87fcd3831ac74e4834c3aa1a73423aa94ab6fbf4551df8abd797ea0b6907f19b"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S4",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127101",
+                "issuer_publication_date": null,
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; three-month and nine-month columns distinct",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:25:29.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-09-30"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S4:00138",
+                  "start": 528,
+                  "end": 575,
+                  "quote": "(in thousands, except share and per share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "99d5ea09ead0dab41e3f35cb66fbacebb14e119356542c8b49a16299b338f281"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00138",
+                  "start": 613,
+                  "end": 731,
+                  "quote": "| | | | | For the Three Months Ended September 30, 2024 | | | | | | For the Nine Months Ended September 30, 2024 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "99d5ea09ead0dab41e3f35cb66fbacebb14e119356542c8b49a16299b338f281"
+                },
+                {
+                  "chunk_id": "ASTS-S4:00139",
+                  "start": 107,
+                  "end": 233,
+                  "quote": "| Net loss attributable to common stockholders - basic and diluted | | | | $ | | (171,946 | | ) | | | | $ | | (264,226 | | ) |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "4aa90f1568e9730811c5bc8f4f8a8cd4b8312d127eaa116fba215d50a8fe95f7"
+                }
+              ]
+            }
+          ],
+          "notes": "Signed (171,946) thousand common-stockholder loss, not consolidated loss or nine-month column.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-04",
+      "ticker": "ASTS",
+      "kind": "financial",
+      "question_sha256": "a946e425465a4a9776366b53dcf68189ce0ede4cae072a84e4870419862e5b52",
+      "expected_source_ids": [
+        "ASTS-S2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "december-unrestricted-cash",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S2",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-031954",
+                "issuer_publication_date": "2025-03-03",
+                "reporting_period": "Q4 and FY2024; SEC exhibit furnished 2025-03-04",
+                "accounting_basis": "US GAAP financials",
+                "sec_metadata": {
+                  "acceptance": "2025-03-04T21:04:57.000Z",
+                  "filing_date": "2025-03-04",
+                  "report_date": "2025-03-04"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S2:00017",
+                  "start": 203,
+                  "end": 244,
+                  "quote": "(Dollars in thousands, except share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "4309a994cf03918126f82d1bda6ae68893803f076168c7976f0ad33ca237f968"
+                },
+                {
+                  "chunk_id": "ASTS-S2:00017",
+                  "start": 281,
+                  "end": 309,
+                  "quote": "| | | | | December 31, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "4309a994cf03918126f82d1bda6ae68893803f076168c7976f0ad33ca237f968"
+                },
+                {
+                  "chunk_id": "ASTS-S2:00017",
+                  "start": 310,
+                  "end": 347,
+                  "quote": "| | | | | 2024 | | | | | | 2023 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "4309a994cf03918126f82d1bda6ae68893803f076168c7976f0ad33ca237f968"
+                },
+                {
+                  "chunk_id": "ASTS-S2:00017",
+                  "start": 427,
+                  "end": 507,
+                  "quote": "| Cash and cash equivalents | | | | $ | | 564,988 | | | | | | $ | | 85,622 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "4309a994cf03918126f82d1bda6ae68893803f076168c7976f0ad33ca237f968"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00453",
+                  "start": 316,
+                  "end": 357,
+                  "quote": "(Dollars in thousands, except share data)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "ea4a8e2b971eaefb987ac505d05d56f78e62df8c1db4c5c000547ca060236695"
+                },
+                {
+                  "chunk_id": "ASTS-S3:00453",
+                  "start": 394,
+                  "end": 428,
+                  "quote": "| | | | | As of December 31, | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "ea4a8e2b971eaefb987ac505d05d56f78e62df8c1db4c5c000547ca060236695"
+                },
+                {
+                  "chunk_id": "ASTS-S3:00453",
+                  "start": 429,
+                  "end": 466,
+                  "quote": "| | | | | 2024 | | | | | | 2023 | | |",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "ea4a8e2b971eaefb987ac505d05d56f78e62df8c1db4c5c000547ca060236695"
+                },
+                {
+                  "chunk_id": "ASTS-S3:00453",
+                  "start": 574,
+                  "end": 654,
+                  "quote": "| Cash and cash equivalents | | | | $ | | 564,988 | | | | | | $ | | 85,622 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "ea4a8e2b971eaefb987ac505d05d56f78e62df8c1db4c5c000547ca060236695"
+                }
+              ]
+            }
+          ],
+          "notes": "Cash/equivalents 564,988 thousand excludes restricted cash 2,546; same balance in annual release and 10-K.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-05",
+      "ticker": "ASTS",
+      "kind": "narrative",
+      "question_sha256": "6403c485f737195ddb8c5caafdfd21b56f8e67034d840f37b12452d81360f77c",
+      "expected_source_ids": [
+        "ASTS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "excluded-costs",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00033",
+                  "start": 280,
+                  "end": 451,
+                  "quote": "We define Adjusted operating expense as Total operating expenses adjusted to exclude amounts of stock-based compensation expense and depreciation and amortization expense.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "5f02265ead63ef0302c250a672d738ce7e37fe5df6946cd20a25e0ef603847a8"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "non-gaap-measure",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00030",
+                  "start": 304,
+                  "end": 365,
+                  "quote": "RECONCILIATION OF GAAP REPORTED TO NON-GAAP ADJUSTED MEASURES",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "88fded3959c4507ea35d601fa70c9cc1bfd11b25523ae0da8976c0d78683b422"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00033",
+                  "start": 115,
+                  "end": 279,
+                  "quote": "alternative financial measures used by management to evaluate our operating performance as a supplement to our most directly comparable U.S. GAAP financial measure.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "5f02265ead63ef0302c250a672d738ce7e37fe5df6946cd20a25e0ef603847a8"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-06",
+      "ticker": "ASTS",
+      "kind": "narrative",
+      "question_sha256": "7857d9221899160a34ce794fb79d19d4e0306d96e2386fc9ffbb2286fb4d8efe",
+      "expected_source_ids": [
+        "ASTS-S3"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "leo-satellite-network",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00022",
+                  "start": 485,
+                  "end": 723,
+                  "quote": "The SpaceMobile Service currently is planned to be provided by a constellation of high-powered, large phased-array satellites in low Earth orbit (“LEO”) using low-band and mid-band spectrum controlled by Mobile Network Operators (“MNOs”).",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "225990e37a18c2523114c7c994c133a1f67771a02806f89c6a23649f85d413c8"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00305",
+                  "start": 459,
+                  "end": 697,
+                  "quote": "The SpaceMobile Service currently is planned to be provided by a constellation of high-powered, large phased-array satellites in low Earth orbit (“LEO”) using low-band and mid-band spectrum controlled by Mobile Network Operators (“MNOs”).",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "6bc91cf0aaebb43c28da3645e55b37e273533f4ceb0090d2c0f35c517acd5aba"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00480",
+                  "start": 129,
+                  "end": 326,
+                  "quote": "the constellation of BlueBird (“BB”) satellites and has begun launching its planned space-based Cellular Broadband network distributed through a constellation of low Earth orbit (“LEO”) satellites.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "fe92956d13c4b66be127fc26e9c27a6e6f51554ee81f3d1c5c130ff66e5cc88d"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "ordinary-unmodified-devices",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00480",
+                  "start": 327,
+                  "end": 481,
+                  "quote": "Once deployed and operational, the BB satellites are designed to provide connectivity directly to off-the-shelf and unmodified devices at broadband speeds",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "fe92956d13c4b66be127fc26e9c27a6e6f51554ee81f3d1c5c130ff66e5cc88d"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00022",
+                  "start": 288,
+                  "end": 484,
+                  "quote": "The SpaceMobile Service is being designed to provide cost-effective, high-speed Cellular Broadband services to end-users who are out of terrestrial cellular coverage using existing mobile devices.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "225990e37a18c2523114c7c994c133a1f67771a02806f89c6a23649f85d413c8"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00305",
+                  "start": 262,
+                  "end": 458,
+                  "quote": "The SpaceMobile Service is being designed to provide cost-effective, high-speed Cellular Broadband services to end-users who are out of terrestrial cellular coverage using existing mobile devices.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "6bc91cf0aaebb43c28da3645e55b37e273533f4ceb0090d2c0f35c517acd5aba"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00023",
+                  "start": 94,
+                  "end": 257,
+                  "quote": "Our vision is that users will not need to subscribe to the SpaceMobile Service directly through us, nor will they need to purchase any new or additional equipment.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "1f0f6a4f91e6e9bea89036d689e7d4c98a432639ba854117f3d45bb5f459aa2e"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "wholesale-through-mnos",
+          "kind": "narrative",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00041",
+                  "start": 483,
+                  "end": 614,
+                  "quote": "we will also seek to sell our services on a wholesale basis to MNOs who then offer this capability directly to their customer base.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "152f6aa4b7e29ad0f290e81c32c906438cbd7a27a96f8457e0729806af612950"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00060",
+                  "start": 25,
+                  "end": 260,
+                  "quote": "The SpaceMobile Service is being designed to offer Cellular Broadband under our wholesale business model with MNOs. We expect the MNOs will market our SpaceMobile Service to their existing customers, who will be the ultimate end-users.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "cdb6cb788004eceef3065f5ca8f32410ab86dea80e694fc08aa84825da0f78d1"
+                }
+              ]
+            },
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S3:00480",
+                  "start": 572,
+                  "end": 747,
+                  "quote": "At that point, the Company intends to offer the SpaceMobile Service to cellular subscribers and others through wholesale commercial agreements with cellular service providers.",
+                  "roles": [
+                    "narrative"
+                  ],
+                  "chunk_text_sha256": "fe92956d13c4b66be127fc26e9c27a6e6f51554ee81f3d1c5c130ff66e5cc88d"
+                }
+              ]
+            }
+          ],
+          "notes": "",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-07",
+      "ticker": "ASTS",
+      "kind": "financial",
+      "question_sha256": "64293c22a3628962b14698fe746db6cce450789b03b18392019b541c3aa15983",
+      "expected_source_ids": [
+        "ASTS-S1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "q2-adjusted-opex",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00032",
+                  "start": 391,
+                  "end": 471,
+                  "quote": "| Adjusted operating expenses | | | | | | | | | | | | | | | | $ | | 34,627 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "e2a1564117fe34125f9e3978e2cb0e03ca6e76c2610d4e79f5e9c34042f09dbb"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00031",
+                  "start": 536,
+                  "end": 576,
+                  "quote": "For the Three Months Ended June 30, 2024",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "c72527d354da0b3800202e801b3e74d392e716fc2df156854e7d04d3725accf7"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00030",
+                  "start": 378,
+                  "end": 400,
+                  "quote": "(Dollars in thousands)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "88fded3959c4507ea35d601fa70c9cc1bfd11b25523ae0da8976c0d78683b422"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00030",
+                  "start": 304,
+                  "end": 365,
+                  "quote": "RECONCILIATION OF GAAP REPORTED TO NON-GAAP ADJUSTED MEASURES",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "88fded3959c4507ea35d601fa70c9cc1bfd11b25523ae0da8976c0d78683b422"
+                }
+              ]
+            }
+          ],
+          "notes": "Exact adjusted non-GAAP amount in the original Q3 release; Q2 and Q3 headers must be distinguished.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "q3-adjusted-opex",
+          "kind": "financial_fact",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": [
+                {
+                  "chunk_id": "ASTS-S1:00031",
+                  "start": 393,
+                  "end": 473,
+                  "quote": "| Adjusted operating expenses | | | | | | | | | | | | | | | | $ | | 45,293 | | |",
+                  "roles": [
+                    "row"
+                  ],
+                  "chunk_text_sha256": "c72527d354da0b3800202e801b3e74d392e716fc2df156854e7d04d3725accf7"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00030",
+                  "start": 463,
+                  "end": 508,
+                  "quote": "For the Three Months Ended September 30, 2024",
+                  "roles": [
+                    "period"
+                  ],
+                  "chunk_text_sha256": "88fded3959c4507ea35d601fa70c9cc1bfd11b25523ae0da8976c0d78683b422"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00030",
+                  "start": 378,
+                  "end": 400,
+                  "quote": "(Dollars in thousands)",
+                  "roles": [
+                    "units"
+                  ],
+                  "chunk_text_sha256": "88fded3959c4507ea35d601fa70c9cc1bfd11b25523ae0da8976c0d78683b422"
+                },
+                {
+                  "chunk_id": "ASTS-S1:00030",
+                  "start": 304,
+                  "end": 365,
+                  "quote": "RECONCILIATION OF GAAP REPORTED TO NON-GAAP ADJUSTED MEASURES",
+                  "roles": [
+                    "basis"
+                  ],
+                  "chunk_text_sha256": "88fded3959c4507ea35d601fa70c9cc1bfd11b25523ae0da8976c0d78683b422"
+                }
+              ]
+            }
+          ],
+          "notes": "Exact adjusted non-GAAP amount in the original Q3 release; Q2 and Q3 headers must be distinguished.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    },
+    {
+      "case_id": "ASTS-QA-09",
+      "ticker": "ASTS",
+      "kind": "abstention_scope",
+      "question_sha256": "4a854732e74ac3e09e6f04bae24e569b6b309ee76cce9e88c43adb134c1e34aa",
+      "expected_source_ids": [
+        "ASTS-S1",
+        "ASTS-S2",
+        "ASTS-S3",
+        "ASTS-S4"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "scope-ASTS-S1",
+          "kind": "scope_source",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S1",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127096",
+                "issuer_publication_date": "2024-11-14",
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP financials; non-GAAP reconciliation separately labeled",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:24:17.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-11-14"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": []
+            }
+          ],
+          "notes": "Source presence is scope coverage only, never proof of universal absence.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "scope-ASTS-S2",
+          "kind": "scope_source",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S2",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-031954",
+                "issuer_publication_date": "2025-03-03",
+                "reporting_period": "Q4 and FY2024; SEC exhibit furnished 2025-03-04",
+                "accounting_basis": "US GAAP financials",
+                "sec_metadata": {
+                  "acceptance": "2025-03-04T21:04:57.000Z",
+                  "filing_date": "2025-03-04",
+                  "report_date": "2025-03-04"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": []
+            }
+          ],
+          "notes": "Source presence is scope coverage only, never proof of universal absence.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "scope-ASTS-S3",
+          "kind": "scope_source",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S3",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-25-030909",
+                "issuer_publication_date": null,
+                "reporting_period": "FY ended 2024-12-31",
+                "accounting_basis": "US GAAP",
+                "sec_metadata": {
+                  "acceptance": "2025-03-03T21:31:05.000Z",
+                  "filing_date": "2025-03-03",
+                  "report_date": "2024-12-31"
+                }
+              },
+              "benchmark_vintage_date": "2025-03-03",
+              "spans": []
+            }
+          ],
+          "notes": "Source presence is scope coverage only, never proof of universal absence.",
+          "critical": true,
+          "review_status": "PASS"
+        },
+        {
+          "requirement_id": "scope-ASTS-S4",
+          "kind": "scope_source",
+          "alternatives": [
+            {
+              "source_id": "ASTS-S4",
+              "source_metadata": {
+                "ticker": "ASTS",
+                "accession": "0000950170-24-127101",
+                "issuer_publication_date": null,
+                "reporting_period": "Q3 2024",
+                "accounting_basis": "US GAAP; three-month and nine-month columns distinct",
+                "sec_metadata": {
+                  "acceptance": "2024-11-14T21:25:29.000Z",
+                  "filing_date": "2024-11-14",
+                  "report_date": "2024-09-30"
+                }
+              },
+              "benchmark_vintage_date": "2024-11-14",
+              "spans": []
+            }
+          ],
+          "notes": "Source presence is scope coverage only, never proof of universal absence.",
+          "critical": true,
+          "review_status": "PASS"
+        }
+      ]
+    }
+  ],
+  "annotation_revision": 3,
+  "supersedes_annotation_hash": "0c46646a757c74b36bca2163ef246c06e382f40962dc6d26cfee56def2d88ffa",
+  "post_run_correction": {
+    "reason": "Source-only review after the first run found an omitted valid current/comparative GAAP statement at IREN-S1:00676.",
+    "verification": "hybrid_label_verifier independently approved exact336:714 without seeing method outputs. Root had seen the first run.",
+    "applies_to": "Same explicit alternative added to both arms through shared labels; no model/fusion/packing/threshold tuning.",
+    "original_run": "hybrid-development-2026-10-25-v1 retains the original frozen annotations/results.",
+    "not_added": "ASTS-S3:00023 distribution/revenue-sharing text does not establish explicit wholesale terms; existing wholesale alternatives remain."
+  },
+  "annotation_hash": "8a921a7cf087c4f305ca230f8ad33321761c43d2680f4d7fdd8cbcd94e4fdf08",
+  "benchmark_reference_correction": {
+    "case_id": "IREN-QA-08",
+    "previous_benchmark_sha256": "337a3e0e242e6383ca8d31d6928fc37a1cf5ea84e8de9af41115daa6c5b56219",
+    "reason": "The unchanged question asks how much the cost decreased, so the answer reference now grades the absolute USD/BTC decrease only. The question wording, expected sources, source spans, and retrieval labels are unchanged."
+  }
+}

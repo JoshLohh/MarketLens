@@ -1,0 +1,626 @@
+{
+  "version": "source-facts-v1",
+  "corpus_version": "sec-qa-pilot-v1",
+  "scope": "Source-specific selectors, no benchmark answers or expected numeric values. Only supplied evidence may be used.",
+  "facts": [
+    {
+      "id": "nbis-revenue-fy24",
+      "ticker": "NBIS",
+      "metric": "revenue",
+      "period": "2024-01-01/2024-12-31",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD million",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "NBIS-S2",
+          "chunk_ids": [
+            "NBIS-S2:00004"
+          ],
+          "guards": [
+            "In USD \\$ millions",
+            "Twelve months ended December 31",
+            "2023.*2024.*Change.*2023.*2024.*Change"
+          ],
+          "row_pattern": "^\\s*Revenues\\s+(.*)$",
+          "column": 4
+        },
+        {
+          "source_id": "NBIS-S2",
+          "chunk_ids": [
+            "NBIS-S2:00001"
+          ],
+          "guards": [
+            "For the full year 2024"
+          ],
+          "row_pattern": "the Group\u2019s revenue of \\$(?P<values>[\\d,]+(?:\\.\\d+)?) million",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "nbis-cash-sep24",
+      "ticker": "NBIS",
+      "metric": "cash",
+      "period": "2024-09-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD million",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "NBIS-S1",
+          "chunk_ids": [
+            "NBIS-S1:00002"
+          ],
+          "guards": [
+            "September 30, 2024",
+            "consolidated basis"
+          ],
+          "row_pattern": "Cash and cash equivalents as of September 30, 2024, stood at USD (?P<values>[\\d,]+(?:\\.\\d+)?) million",
+          "column": 0
+        },
+        {
+          "source_id": "NBIS-S1",
+          "chunk_ids": [
+            "NBIS-S1:00037"
+          ],
+          "guards": [
+            "in millions of U.S. dollars",
+            "September 30",
+            "2023\\*?\\s+2024"
+          ],
+          "row_pattern": "^\\s*Cash and cash equivalents\\s+(.*)$",
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": "nbis-cash-dec24",
+      "ticker": "NBIS",
+      "metric": "cash",
+      "period": "2024-12-31",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD million",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "NBIS-S2",
+          "chunk_ids": [
+            "NBIS-S2:00003",
+            "NBIS-S2:00004"
+          ],
+          "guards": [
+            "December 31, 2024",
+            "consolidated basis",
+            "In USD \\$ millions"
+          ],
+          "row_pattern": "cash and cash equivalents as of December 31, 2024, stood at \\$(?P<values>[\\d,]+(?:\\.\\d+)?) million",
+          "column": 0
+        },
+        {
+          "source_id": "NBIS-S2",
+          "chunk_ids": [
+            "NBIS-S2:00003",
+            "NBIS-S2:00038"
+          ],
+          "guards": [
+            "December 31, 2024",
+            "consolidated basis",
+            "in millions of U\\.S\\. dollars"
+          ],
+          "row_pattern": "cash and cash equivalents as of December 31, 2024, stood at \\$(?P<values>[\\d,]+(?:\\.\\d+)?) million",
+          "column": 0
+        },
+        {
+          "source_id": "NBIS-S2",
+          "chunk_ids": [
+            "NBIS-S2:00038"
+          ],
+          "guards": [
+            "in millions of U.S. dollars",
+            "December 31",
+            "2023\\*?\\s+2024"
+          ],
+          "row_pattern": "^\\s*Cash and cash equivalents\\s+(.*)$",
+          "column": 1
+        },
+        {
+          "source_id": "NBIS-S2",
+          "chunk_ids": [
+            "NBIS-S2:00001",
+            "NBIS-S2:00038"
+          ],
+          "guards": [
+            "December 31, 2024",
+            "consolidated basis",
+            "in millions of U\\.S\\. dollars"
+          ],
+          "row_pattern": "Cash and cash equivalents as of December 31, 2024, stood at \\$(?P<values>[\\d,]+(?:\\.\\d+)?) million",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "nbis-capex-q3",
+      "ticker": "NBIS",
+      "metric": "capex",
+      "period": "2024-07-01/2024-09-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD million",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "NBIS-S1",
+          "chunk_ids": [
+            "NBIS-S1:00002"
+          ],
+          "guards": [
+            "three and nine months ended September 30, 2024, respectively"
+          ],
+          "row_pattern": "Capital expenditures totaled USD (?P<values>[\\d,]+(?:\\.\\d+)? million and USD [\\d,]+(?:\\.\\d+)?) million for the three and nine months",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "nbis-capex-nine-months",
+      "ticker": "NBIS",
+      "metric": "capex",
+      "period": "2024-01-01/2024-09-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD million",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "NBIS-S1",
+          "chunk_ids": [
+            "NBIS-S1:00002"
+          ],
+          "guards": [
+            "three and nine months ended September 30, 2024, respectively"
+          ],
+          "row_pattern": "Capital expenditures totaled USD (?P<values>[\\d,]+(?:\\.\\d+)? million and USD [\\d,]+(?:\\.\\d+)?) million for the three and nine months",
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": "iren-revenue-fy25",
+      "ticker": "IREN",
+      "metric": "revenue",
+      "period": "2024-07-01/2025-06-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "IREN-S1",
+          "chunk_ids": [
+            "IREN-S1:00730"
+          ],
+          "guards": [
+            "years ended June 30, 2025 and 2024 and 2023",
+            "thousands",
+            "2025\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Total revenue\\s+(.*)$",
+          "column": 0
+        },
+        {
+          "source_id": "IREN-S1",
+          "chunk_ids": [
+            "IREN-S1:00949"
+          ],
+          "guards": [
+            "Years ended June 30",
+            "in USD thousands",
+            "2025\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Total revenue\\s+(.*)$",
+          "column": 0
+        },
+        {
+          "source_id": "IREN-S1",
+          "chunk_ids": [
+            "IREN-S1:00826"
+          ],
+          "guards": [
+            "Consolidated Statements of Operations",
+            "Years ended June 30",
+            "in USD thousands",
+            "2025\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Total revenue\\s+(.*)$",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "iren-revenue-fy24-gaap",
+      "ticker": "IREN",
+      "metric": "revenue",
+      "period": "2023-07-01/2024-06-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "IREN-S1",
+          "chunk_ids": [
+            "IREN-S1:00730"
+          ],
+          "guards": [
+            "years ended June 30, 2025 and 2024 and 2023",
+            "thousands",
+            "2025\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Total revenue\\s+(.*)$",
+          "column": 1
+        },
+        {
+          "source_id": "IREN-S1",
+          "chunk_ids": [
+            "IREN-S1:00949"
+          ],
+          "guards": [
+            "Years ended June 30",
+            "in USD thousands",
+            "2025\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Total revenue\\s+(.*)$",
+          "column": 1
+        },
+        {
+          "source_id": "IREN-S1",
+          "chunk_ids": [
+            "IREN-S1:00826"
+          ],
+          "guards": [
+            "Consolidated Statements of Operations",
+            "Years ended June 30",
+            "in USD thousands",
+            "2025\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Total revenue\\s+(.*)$",
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": "iren-bitcoin-oct-original",
+      "ticker": "IREN",
+      "metric": "bitcoin_mined",
+      "period": "2024-10",
+      "accounting_basis": "operational",
+      "currency": null,
+      "unit": "BTC",
+      "raw_unit": "BTC",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "IREN-S2",
+          "chunk_ids": [
+            "IREN-S2:00001",
+            "IREN-S2:00002"
+          ],
+          "guards": [
+            "November 6, 2024",
+            "Key Metrics Oct-24 Sep-24 Aug-24"
+          ],
+          "row_pattern": "Bitcoin\\s+mined\\s+(?P<values>[\\d,]+(?:\\.\\d+)? BTC [\\d,]+(?:\\.\\d+)? BTC [\\d,]+(?:\\.\\d+)? BTC)",
+          "column": 0
+        },
+        {
+          "source_id": "IREN-S2",
+          "chunk_ids": [
+            "IREN-S2:00001"
+          ],
+          "guards": [
+            "November 6, 2024",
+            "October 2024"
+          ],
+          "row_pattern": "(?P<values>[\\d,]+(?:\\.\\d+)?) Bitcoin mined",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "iren-installed-oct-original",
+      "ticker": "IREN",
+      "metric": "installed",
+      "period": "2024-10 month-end",
+      "accounting_basis": "operational",
+      "currency": null,
+      "unit": "EH/s",
+      "raw_unit": "EH/s",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "IREN-S2",
+          "chunk_ids": [
+            "IREN-S2:00001"
+          ],
+          "guards": [
+            "November 6, 2024",
+            "October 2024"
+          ],
+          "row_pattern": "(?P<values>[\\d,]+(?:\\.\\d+)?) EH/s installed",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "iren-average-oct-original",
+      "ticker": "IREN",
+      "metric": "average",
+      "period": "2024-10 monthly average",
+      "accounting_basis": "operational",
+      "currency": null,
+      "unit": "EH/s",
+      "raw_unit": "EH/s",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "IREN-S2",
+          "chunk_ids": [
+            "IREN-S2:00001"
+          ],
+          "guards": [
+            "November 6, 2024",
+            "Key Metrics Oct-24 Sep-24 Aug-24"
+          ],
+          "row_pattern": "Average operating hashrate (?P<values>[\\d,]+(?:\\.\\d+)? EH/s [\\d,]+(?:\\.\\d+)? EH/s [\\d,]+(?:\\.\\d+)? EH/s)",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "iren-cost-oct-original",
+      "ticker": "IREN",
+      "metric": "electricity_cost",
+      "period": "2024-10",
+      "accounting_basis": "operational",
+      "currency": "USD",
+      "unit": "USD/BTC",
+      "raw_unit": "USD/BTC",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "IREN-S2",
+          "chunk_ids": [
+            "IREN-S2:00001",
+            "IREN-S2:00002"
+          ],
+          "guards": [
+            "November 6, 2024",
+            "Key Metrics Oct-24 Sep-24 Aug-24"
+          ],
+          "row_pattern": "Electricity cost \\(per Bitcoin\\) (?P<values>\\(\\$[\\d,]+(?:\\.\\d+)?\\) \\(\\$[\\d,]+(?:\\.\\d+)?\\) \\(\\$[\\d,]+(?:\\.\\d+)?\\))",
+          "column": 0
+        }
+      ],
+      "absolute": true
+    },
+    {
+      "id": "iren-cost-oct-revised",
+      "ticker": "IREN",
+      "metric": "electricity_cost",
+      "period": "2024-10",
+      "accounting_basis": "operational",
+      "currency": "USD",
+      "unit": "USD/BTC",
+      "raw_unit": "USD/BTC",
+      "factor": "1",
+      "alternatives": [
+        {
+          "source_id": "IREN-S3",
+          "chunk_ids": [
+            "IREN-S3:00001",
+            "IREN-S3:00002"
+          ],
+          "guards": [
+            "December 6, 2024",
+            "Key Metrics Nov-24 Oct-24\\* Sep-24",
+            "Revision of Oct-24 electricity cost per Bitcoin"
+          ],
+          "row_pattern": "Electricity cost \\(per Bitcoin\\) (?P<values>\\(\\$[\\d,]+(?:\\.\\d+)?\\) \\(\\$[\\d,]+(?:\\.\\d+)?\\)\\* \\(\\$[\\d,]+(?:\\.\\d+)?\\))",
+          "column": 1
+        }
+      ],
+      "absolute": true
+    },
+    {
+      "id": "asts-revenue-q3",
+      "ticker": "ASTS",
+      "metric": "revenue",
+      "period": "2024-07-01/2024-09-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "ASTS-S4",
+          "chunk_ids": [
+            "ASTS-S4:00010"
+          ],
+          "guards": [
+            "Dollars in thousands",
+            "Three Months Ended September 30",
+            "2024\\s+2023\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Revenues\\s+(.*)$",
+          "column": 0
+        },
+        {
+          "source_id": "ASTS-S1",
+          "chunk_ids": [
+            "ASTS-S1:00019"
+          ],
+          "guards": [
+            "Dollars in thousands",
+            "Three Months Ended September 30",
+            "2024\\s+2023\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Revenues\\s+(.*)$",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "asts-loss-common-q3",
+      "ticker": "ASTS",
+      "metric": "net_loss_common",
+      "period": "2024-07-01/2024-09-30",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "ASTS-S1",
+          "chunk_ids": [
+            "ASTS-S1:00019",
+            "ASTS-S1:00020",
+            "ASTS-S1:00021",
+            "ASTS-S1:00022"
+          ],
+          "guards": [
+            "Dollars in thousands",
+            "Three Months Ended September 30",
+            "2024\\s+2023\\s+2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Net loss attributable to common stockholders\\s+(.*)$",
+          "column": 0
+        },
+        {
+          "source_id": "ASTS-S4",
+          "chunk_ids": [
+            "ASTS-S4:00138",
+            "ASTS-S4:00139"
+          ],
+          "guards": [
+            "in thousands, except share",
+            "Three Months Ended September 30, 2024"
+          ],
+          "row_pattern": "^\\s*Net loss attributable to common stockholders - basic and diluted\\s+(.*)$",
+          "column": 0
+        },
+        {
+          "source_id": "ASTS-S4",
+          "chunk_ids": [
+            "ASTS-S4:00010",
+            "ASTS-S4:00011",
+            "ASTS-S4:00012",
+            "ASTS-S4:00013"
+          ],
+          "guards": [
+            "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "Dollars in thousands",
+            "For the Three Months Ended September 30",
+            "Net loss attributable to common stockholders"
+          ],
+          "row_pattern": "^\\s*Net loss attributable to common stockholders\\s+(.*)$",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "asts-adjusted-opex-q3",
+      "ticker": "ASTS",
+      "metric": "adjusted_opex",
+      "period": "2024-07-01/2024-09-30",
+      "accounting_basis": "non-GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "ASTS-S1",
+          "chunk_ids": [
+            "ASTS-S1:00030",
+            "ASTS-S1:00031"
+          ],
+          "guards": [
+            "RECONCILIATION OF GAAP REPORTED TO NON-GAAP",
+            "Dollars in thousands",
+            "For the Three Months Ended September 30, 2024"
+          ],
+          "row_pattern": "For the Three Months Ended September 30, 2024[\\s\\S]*?^\\s*Adjusted operating expenses\\s+(.*)$",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "asts-adjusted-opex-q2",
+      "ticker": "ASTS",
+      "metric": "adjusted_opex",
+      "period": "2024-04-01/2024-06-30",
+      "accounting_basis": "non-GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "ASTS-S1",
+          "chunk_ids": [
+            "ASTS-S1:00030",
+            "ASTS-S1:00031",
+            "ASTS-S1:00032"
+          ],
+          "guards": [
+            "RECONCILIATION OF GAAP REPORTED TO NON-GAAP",
+            "Dollars in thousands",
+            "For the Three Months Ended June 30, 2024"
+          ],
+          "row_pattern": "For the Three Months Ended June 30, 2024[\\s\\S]*?^\\s*Adjusted operating expenses\\s+(.*)$",
+          "column": 0
+        }
+      ]
+    },
+    {
+      "id": "asts-cash-dec24",
+      "ticker": "ASTS",
+      "metric": "cash",
+      "period": "2024-12-31",
+      "accounting_basis": "US GAAP",
+      "currency": "USD",
+      "unit": "USD million",
+      "raw_unit": "USD thousand",
+      "factor": "0.001",
+      "alternatives": [
+        {
+          "source_id": "ASTS-S2",
+          "chunk_ids": [
+            "ASTS-S2:00017"
+          ],
+          "guards": [
+            "Dollars in thousands",
+            "December 31",
+            "2024\\s+2023"
+          ],
+          "row_pattern": "^\\s*Cash and cash equivalents\\s+(.*)$",
+          "column": 0
+        }
+      ]
+    }
+  ]
+}
