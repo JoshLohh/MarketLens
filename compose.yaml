@@ -1,0 +1,24 @@
+services:
+  weaviate:
+    image: cr.weaviate.io/semitechnologies/weaviate:1.40.3
+    command: ["--host", "0.0.0.0", "--port", "8080", "--scheme", "http"]
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - marketlens_weaviate:/var/lib/weaviate
+    environment:
+      PERSISTENCE_DATA_PATH: /var/lib/weaviate
+      CLUSTER_HOSTNAME: node1
+      QUERY_MAXIMUM_RESULTS: "10000"
+      AUTOSCHEMA_ENABLED: "false"
+      ASYNC_INDEXING: "false"
+      API_BASED_MODULES_DISABLED: "true"
+      DISABLE_TELEMETRY: "true"
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "false"
+      AUTHENTICATION_APIKEY_ENABLED: "true"
+      AUTHENTICATION_APIKEY_ALLOWED_KEYS: ${WEAVIATE_API_KEY:?Set a private Weaviate API key}
+      AUTHENTICATION_APIKEY_USERS: marketlens
+      AUTHORIZATION_RBAC_ENABLED: "true"
+      AUTHORIZATION_RBAC_ROOT_USERS: marketlens
+volumes:
+  marketlens_weaviate:

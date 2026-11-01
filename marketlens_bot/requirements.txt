@@ -1,0 +1,2 @@
+# 0.10.5 fixes macOS certificate-verification vulnerabilities in earlier versions.
+truststore==0.10.5; sys_platform == "darwin"

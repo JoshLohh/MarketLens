@@ -10,7 +10,7 @@ Forecasts are uncertain estimates. Each forecast should show its horizon, eviden
 
 ## Planned capabilities and delivery order
 
-1. **First product slice — Telegram Q&A:** Answer user questions from cited filings and company releases. Use structured financial data and ordinary code for figures and calculations; use retrieval plus an LLM for source-grounded explanations and comparisons. Retrieval-augmented generation (RAG) searches relevant passages and gives them to the LLM as evidence. State when evidence is missing. The hybrid lexical-plus-embedding retriever is the intended retrieval direction; the product bot and its integration are not built yet.
+1. **First product slice — Telegram Q&A:** Answer user questions from cited filings and company releases. Use structured financial data and ordinary code for figures and calculations; use retrieval plus an LLM for source-grounded explanations and comparisons. Retrieval-augmented generation (RAG) searches relevant passages and gives them to the LLM as evidence. State when evidence is missing. The local Python bot has returned one checked IREN FY2025 revenue calculation with its filing citation through Telegram. The user-run Mac performance gates passed. The user then ran 53 Stage 1 and four Stage 3 checks for the guarded provider and budget logic; all passed. The code now permits live GPT-6 Luna with configured setup and fresh v4 consent, and the activation checks passed (59 Stage 1, 21 Stage 2, and 15 Stage 3). Local reservation limits are $0.03 per answer and $5 per Singapore month, subject to estimated usage and rates; actual provider charges can differ. Broad answer quality remains limited to the fixed reviewed pilot.
 2. **Later — automatic updates:** After the Q&A flow is built, monitor covered SEC filings and selected company news. Summarize new information, compare it with earlier evidence, and send a Telegram alert with source links. Deduplicate repeated items. This is not part of the first bot milestone.
 3. **Later — expected price movement:** Add an experimental forecast only after source, label, and backtest gates are met. Show the expected percentage move, likelihood of an upward move, an uncertainty range, key evidence, forecast horizon, and information cutoff. Never imply certainty when the historical evidence is weak.
 
@@ -35,7 +35,7 @@ Forecasts are uncertain estimates. Each forecast should show its horizon, eviden
 
 Build the Telegram Q&A interface first. Its request path should route a user's question to filing retrieval, evidence-grounded answer generation, or a checked financial calculation, then return citations or a clear abstention. The hybrid lexical-plus-embedding retriever is the intended retrieval direction, while the lexical path stays useful as an evaluation control. Do not add scheduled background monitoring or alerts to this first slice. Later, a bounded orchestrator can add retrieval, comparison, calculation, and summarization workflows for detecting and explaining new events. Keep forecasting separate: an LLM may explain a forecast using supplied evidence and assumptions, but must not invent forecast values.
 
-The pilot's embedding search uses a local vector index and cached vectors for evaluation. A vector index is not necessarily a vector database: no persistent production vector database has been selected or committed to. Decide whether one is useful after the Q&A product's persistence, corpus-update, filtering, and serving needs are concrete.
+The pilot's embedding search uses a local vector index and cached vectors for evaluation. The private Mac prototype uses self-hosted Weaviate for persistence, with the existing app-side lexical/dense fusion and evidence packer. Cache bootstrap and the user-run 21-question development parity passed, and one local calculation was returned through Telegram. After the latest answer-module change, the user refreshed parity and all 21 development cases matched; the user-run Mac benchmark also passed its startup, retrieval, queue and sampled-memory targets. This local choice does not establish a production database or deployment decision. Native Weaviate hybrid search and ingestion for additional companies require later evaluation.
 
 Background workflows collect and timestamp new source material, remove duplicates, compare it with prior evidence, and prepare alerts. Keep workflow actions limited to these research tasks; no broader autonomous action is defined in this plan. Preserve source links, publication times, SEC acceptance and collector-observation times, filing identifiers and amendments, financial-data periods and units, forecast cutoffs, and alert state so evidence can be traced and the same item is not processed twice. SEC pilot access does not establish rights or retention terms for news or market-price data; gate those sources on separate review.
 
@@ -189,9 +189,45 @@ The SEC filing pilot has a verified local release, lexical and hybrid retrieval
 paths, a structured fact baseline, and two answer paths. The latest recorded
 full Stage 1 suite had 171 passes and one stale prompt-wording assertion out of
 172 tests. The corrected focused test passed in 0.863 seconds; the full suite
-was not rerun afterward. The user reported Stage 1 was okay. Stage 2 passes its
-evidence gate. Stage 3's row-hint pair is fully source-reviewed and graded at
-17 PASS / 4 UNKNOWN / 0 FAIL for each arm. Begin the private Telegram Q&A MVP
-with safe citation, validation-error and abstention handling. The bot is not
-built yet; language, framework, persistent storage and orchestration remain
-undecided. Scheduled monitoring and alerts remain deferred.
+was not rerun afterward. The user reported 23 Step 4 software-rule checks and
+five answer-contract checks passed. The user also ran the focused
+parity-cutoff regression test and it passed. Stage 2 Weaviate development parity
+matched all 21 cases. The fixed corpus and cache remain unchanged. The local
+Telegram Q&A prototype has returned one checked local IREN FY2025 revenue
+calculation through Telegram, with the source citation and corrected coverage
+date. This verifies one deterministic answer path, not broad Q&A quality. The
+user-run Mac startup, retrieval, queue and sampled-memory performance targets
+also passed.
+After the approved $0.03 per-answer / $5 Singapore-month cap change, the user
+ran 42 Stage 1 software checks and 10 Stage 3 fake-provider answer checks; all
+passed before the clock adapter and AI consent v3 change. These tests make no
+live Telegram or OpenAI calls. The provider reserves the maximum accepted
+request envelope without a separate token-count call. A `ChronyNTSClock` source
+and standalone `clock-check` command now perform a bounded authenticated
+Cloudflare NTS offset check without changing the Mac clock; the command sends
+no question or filing text, though the time service can observe the network
+address. The time-check command is not a Stage 1/2/3 evaluation. The user-run
+clock check passed with an estimated offset within one second, and all 50
+updated Stage 1 clock, consent, state, Telegram, and fake-provider checks
+passed. Neither made a live OpenAI request. The runtime factory composes
+`ChronyNTSClock` with `ClockGuard` when provider setup is present. The user ran
+the focused factory checks: all four
+Stage 1 checks and the one Stage 3 fake-transport integration check passed.
+These used fakes and made no live provider request.
+An additional safety change pins the requested service tier to
+`default`, confirms the reservation month again after a response, and counts
+all unresolved reservations against every month's local allowance. The user
+ran 53 Stage 1 and four Stage 3 checks; all passed. Live transport is now
+enabled in code with fresh v4 consent. The user ran 59 Stage 1 tests, 21
+Stage 2 parity cases, and 15 Stage 3 tests; all passed. The request's token bound and prices are estimates, so
+these local limits do not guarantee the final provider bill. Since `answer.py`
+changed, the same 21-question development parity must be refreshed before the
+bot can restart.
+Weaviate is selected for the private local prototype. Scheduled
+monitoring, alerts, additional companies and forecasting remain deferred.
+
+The first user-triggered live OpenAI explanation fell back to cited excerpts; one attempt was settled locally and the exact failure was not retained. Fixed-message diagnostics have been added for future failures. User-run offline checks and a refreshed development parity record are pending for this change.
+
+The user passed the diagnostic checks (30 Stage 1, 21 Stage 2 and 10 Stage 3) and then sent another live question. It reached the 1,200-token output limit and returned cited excerpts. The bot's output limit was then raised to 2,000 tokens per attempt; two full local reservations totaled $0.03. The user ran 30 provider software checks and all passed. The pilot, retrieval and citation rules remained unchanged.
+
+After a restart, another user-triggered live question hit the 2,000-token output limit. The current per-attempt limit is 25,000 tokens, with a $0.0265 full local reservation at the configured rates; a second attempt requires sufficient remaining room under the unchanged $0.03 answer limit. The user ran 31 Stage 1 provider tests and 10 Stage 3 fake-generation tests; all passed. A later user-triggered live IREN question returned a cited AI explanation, with repeated source links. Source display now removes identical lines per claim after validation; the user ran eight Stage 3 answer checks and all passed, and the 21-case Stage 2 development parity matched. One example does not establish answer quality. Actual provider charges can differ from local estimates.
